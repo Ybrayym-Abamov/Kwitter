@@ -4,6 +4,7 @@
   "homepage": "https://safia88.gitlab.io/assessment---kwitter-frontend",
   "private": true,
   "dependencies": {
+    "antd": "^3.25.2",
     "connected-react-router": "^6.5.2",
     "history": "^4.10.1",
     "react": "^16.11.0",
