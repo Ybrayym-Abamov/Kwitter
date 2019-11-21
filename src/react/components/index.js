@@ -1,6 +1,6 @@
 // components from own project
 export { default as LoginForm } from "./LoginForm";
-export { default as Menu } from "./Menu";
+export { default as TopMenu } from "./TopMenu";
 export { default as UserInfoBlock } from "./UserInfoBlock"
 
 // components from other packages

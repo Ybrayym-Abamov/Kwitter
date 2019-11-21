@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, UserInfoBlock } from "../components";
+import { TopMenu, UserInfoBlock } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 
 class Profile extends React.Component {

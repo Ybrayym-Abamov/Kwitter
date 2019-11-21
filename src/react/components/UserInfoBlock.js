@@ -13,6 +13,9 @@ class UserInfoBlock extends React.Component {
         return (
         <Card
             style={{ width: 250 }}
+
+            // these elements are just commented out in case I want to use them later
+            
             // cover={
             // <img
             //     alt="example"
@@ -26,9 +29,9 @@ class UserInfoBlock extends React.Component {
             // ]}
         >
             <Meta
-            avatar={<Avatar src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-            title="User Name"
-            description="I'm a user that likes to do things. Also I like to do stuff."
+            avatar={<Avatar size={64} src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />} //we'll need to make this link to whatever icon the user uploads
+            title="User Name" // we'll need to make this show the name for the user account
+            description="I'm a user that likes to do things. Also I like to do stuff."  //this will link to
             />
         </Card>
     );
