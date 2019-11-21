@@ -1,9 +1,10 @@
 {
   "name": "kwitter",
   "version": "0.1.0",
-  "homepage": "https://kenzie-academy.gitlab.io/se/fe/final-projects/assessment---kwitter-frontend",
+  "homepage": "https://safia88.gitlab.io/assessment---kwitter-frontend",
   "private": true,
   "dependencies": {
+    "antd": "^3.25.2",
     "connected-react-router": "^6.5.2",
     "history": "^4.10.1",
     "react": "^16.11.0",
@@ -35,6 +36,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "dependency-cruiser": "^5.2.3"
+    "dependency-cruiser": "^5.3.2"
   }
 }
