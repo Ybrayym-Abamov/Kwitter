@@ -1,13 +1,25 @@
 #menu {
-  background-color: lightskyblue;
+  background-color: darkseagreen;
+  /* border: 1px solid blue; */
   display: flex;
+  /* flex-direction: row; */
   justify-content: space-between;
   align-items: center;
   padding: 0 1em;
   border-radius: 1em;
+  margin: 1%;
 }
 
-#menu-links {
+#Menu.Item {
+  background-color: red;
+}
+
+/* #tabMenu {
+  display: flex;
+  flex-direction: row;
+} */
+
+/* #menu-links {
   display: flex;
   padding-left: 1em;
 }
@@ -17,4 +29,4 @@
   color: darkblue;
   text-decoration: underline;
   cursor: pointer;
-}
+} */
