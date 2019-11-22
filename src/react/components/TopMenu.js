@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from ".";
-import "./Menu.css";
+import "./TopMenu.css";
 import { withAsyncAction } from "../HOCs";
 import { Menu, Icon } from 'antd';
 import 'antd/dist/antd.css';
