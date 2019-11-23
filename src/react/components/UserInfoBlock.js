@@ -2,7 +2,7 @@ import React from "react";
 // import { Link } from ".";
 import "./UserInfo.css";
 // import { userIsAuthenticated } from "../HOCs";
-import { Card, Icon, Avatar } from 'antd';
+import { Card, Avatar } from 'antd';
 import 'antd/dist/antd.css';
 
 const { Meta } = Card;
