@@ -1,5 +1,5 @@
 import React from "react";
-import { CreateNewMessage, UserInfoBlock } from "../components";
+import { UserInfoBlock } from "../components";
 
 //this component will be styled to be side-by-side with the main content component
 
