@@ -45,6 +45,7 @@ class LoginForm extends React.Component {
               onChange={this.handleChange}
             />
           </Form.Item>
+          <Form.Item>
           <Button
             type="primary"
             htmlType="submit"
@@ -53,9 +54,12 @@ class LoginForm extends React.Component {
           >
             Login
           </Button>
+          Or <a href="/registration">register now!</a>
+          </Form.Item>
+          
         </Form>
         {loading && <Spinner name="circle" color="blue" />}
-        {error && <p style={{ color: "red" }}>{error.message}</p>}
+        {error && <p style={{ color: "red" }}>{error.message}</p>}        
       </React.Fragment>
     );
   }
