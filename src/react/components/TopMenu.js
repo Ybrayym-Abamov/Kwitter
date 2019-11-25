@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from ".";
-import "./Menu.css";
+import "./TopMenu.css";
 import { withAsyncAction } from "../HOCs";
 import { Menu, Icon } from 'antd';
 import 'antd/dist/antd.css';
@@ -28,7 +28,7 @@ class TopMenu extends React.Component {
   render() {
     return (
       <div id="menu">
-        <h1>Urth Kwitter</h1>
+        {/* <h1>Urth Kwitter</h1> */}
         <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
         <Menu.Item key="home">
           <Icon type="home" />
