@@ -30,12 +30,11 @@ class TopMenu extends React.Component {
   render() {
     return (
       <div id="menu">
-        {/* <h1>Urth Kwitter</h1> */}
         <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
         <Menu.Item key="home" >
           <div id="homeButton">
             <Icon type="home" />
-            <Link to={pages.Home.path}>Home</Link>
+            <Link to={pages.Profile.path}>Home</Link>
           </div>
         </Menu.Item>
 
@@ -63,6 +62,7 @@ class TopMenu extends React.Component {
             </div>
           )}
         </Menu.Item>
+        <Menu.Item />
       </Menu>
        
       </div>
