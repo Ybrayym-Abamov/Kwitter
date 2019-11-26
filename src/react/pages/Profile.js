@@ -1,12 +1,13 @@
 import React from "react";
-import { MessageFeed } from "../components";
+import { TopMenu, Sidebar } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 
 class Profile extends React.Component {
   render() {
     return (
       <>
-        <MessageFeed />
+        <TopMenu isAuthenticated={this.props.isAuthenticated} />
+        <Sidebar />
       </>
     );
   }
