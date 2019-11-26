@@ -1,12 +1,14 @@
 import React from "react";
-// import { Sidebar } from "../components";
+import { TopMenu, Sidebar } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 
 class Settings extends React.Component {
   render() {
     return (
       <>
-        <p>this is the user settings page</p>
+        <TopMenu isAuthenticated={this.props.isAuthenticated} />
+        <Sidebar />
+        <p>this is the settings page</p>
       </>
     );
   }
