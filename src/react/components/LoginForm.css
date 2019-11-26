@@ -3,6 +3,9 @@
   flex-direction: column;
   max-width: 20em;
 }
+.login-form-button {
+  width: 100%;
+}
 
 /* #components-form-demo-normal-login .login-form {
   max-width: 300px;
