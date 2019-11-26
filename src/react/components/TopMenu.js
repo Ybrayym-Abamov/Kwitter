@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from ".";
 import "./TopMenu.css";
-import { withAsyncAction } from "../HOCs";
 import pages from "../pages";
-
+import { withAsyncAction } from "../HOCs";
 import { Menu, Icon } from 'antd';
 import 'antd/dist/antd.css';
 
@@ -62,7 +61,6 @@ class TopMenu extends React.Component {
             </div>
           )}
         </Menu.Item>
-        <Menu.Item />
       </Menu>
        
       </div>

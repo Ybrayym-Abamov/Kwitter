@@ -1,11 +1,15 @@
 import React from "react";
-import { Link } from ".";
-import "./UserProfile.css";
+import { UserInfoBlock, UserDescription } from ".";
+
+// import { Link } from ".";
+// import "./UserProfile.css";
 
 class UserProfile extends React.Component {
     render() {
         return (
           <>
+          <UserInfoBlock />
+          <UserDescription />
           </>
         );
       }

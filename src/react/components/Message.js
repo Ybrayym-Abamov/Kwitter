@@ -2,7 +2,6 @@ import React from "react";
 // import { Link } from ".";
 // import "./Message.css";
 import { Card, Avatar } from 'antd';
-
 import 'antd/dist/antd.css';
 
 const { Meta } = Card;

@@ -7,20 +7,24 @@ import pages from "./pages";
 class App extends React.Component {
   render() {
     return (
-      <>
-        <Sidebar />
-        <TopMenu />
-        <Switch>
-          {Object.entries(pages).map(([routeName, routeObj]) => (
-            <Route
-              key={routeName}
-              exact
-              path={routeObj.path}
-              component={routeObj.component}
-            />
-          ))}
-        </Switch>
-      </>
+        <>
+          <div id="sidebar">
+            <Sidebar />
+          </div>
+          <div id="mainContent">
+            <TopMenu />
+            <Switch>
+              {Object.entries(pages).map(([routeName, routeObj]) => (
+                <Route
+                  key={routeName}
+                  exact
+                  path={routeObj.path}
+                  component={routeObj.component}
+                />
+              ))}
+            </Switch>
+          </div>
+        </>
     );
   }
 }

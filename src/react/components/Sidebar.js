@@ -1,5 +1,5 @@
 import React from "react";
-import { UserInfoBlock, CreateNewMessage } from "../components";
+import { UserInfoBlock, CreateNewMessage } from ".";
 import "./Sidebar.css";
 
 

@@ -6,8 +6,7 @@ class Settings extends React.Component {
   render() {
     return (
       <>
-        {/* <Sidebar /> */}
-        <p>this is the settings page</p>
+        <p>this is the user settings page</p>
       </>
     );
   }
