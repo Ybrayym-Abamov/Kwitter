@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route, Sidebar, TopMenu } from "./components";
 // import { Sidebar, TopMenu } from "../components";
 import pages from "./pages";
+import { userIsAuthenticated } from "./HOCs";
 
 
 class App extends React.Component {
@@ -12,7 +13,8 @@ class App extends React.Component {
             <Sidebar />
           </div>
           <div id="mainContent">
-            <TopMenu />
+          <TopMenu isAuthenticated={this.props.isAuthenticated} />
+
             <Switch>
               {Object.entries(pages).map(([routeName, routeObj]) => (
                 <Route
@@ -29,4 +31,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default userIsAuthenticated(App);

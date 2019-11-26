@@ -1,6 +1,6 @@
 // components from own project
-export { default as CreateNewMessage } from "./CreateNewMessage"; 
 export { default as LoginForm } from "./LoginForm";
+export { default as CreateNewMessage } from "./CreateNewMessage"; 
 export { default as Message } from "./Message";
 export { default as MessageFeed } from "./MessageFeed";
 export { default as Sidebar } from "./Sidebar";

@@ -9,8 +9,8 @@ import Settings from "./Settings";
 export default {
   Home: { path: "/", component: Home },
   Profile: { path: "/profile/:username", component: Profile },
-  NotFound: { path: "*", component: NotFound },
   Users: { path: "/users", component: Users },
   Settings: { path: "/settings", component: Settings },
+  NotFound: { path: "*", component: NotFound },
   // CreateNewMessage: { path: "/createnewmessage", component: CreateNewMessage }
 };
