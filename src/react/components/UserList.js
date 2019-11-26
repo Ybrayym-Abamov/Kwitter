@@ -7,7 +7,8 @@ class UserList extends React.Component {
     render() {
         return (
           <>
-          <UserInfoBlock/ >
+            <UserInfoBlock />
+            <p>This will be a feed of userinfoblocks for all registered users.</p>
           </>
         );
       }

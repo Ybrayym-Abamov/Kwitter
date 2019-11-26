@@ -1,14 +1,14 @@
 import React from "react";
-import { UserInfoBlock } from "../components";
+import { UserList } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 
 class Users extends React.Component {
   render() {
     return (
       <>
-        <UserInfoBlock />
+          <h3>this is the users page</h3>
+        <UserList />
           
-          <p>this is the users page</p>
         
       </>
     );

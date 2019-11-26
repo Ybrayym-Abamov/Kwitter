@@ -6,7 +6,7 @@ class UserDescription extends React.Component {
     render() {
         return (
           <>
-          <p id="textBlock">include code to show the description the user inputs from the update user form</p>
+          Placeholder text for User Bio code. Bio will be input on UpdateUserForm. 
           </>
         );
       }
