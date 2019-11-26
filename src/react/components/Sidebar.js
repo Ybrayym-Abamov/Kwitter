@@ -9,7 +9,7 @@ class Sidebar extends React.Component {
           <>
           <h1>Urth Kwitter</h1>
             <UserInfoBlock />
-            <CreateNewMessage /> //this has not been merged yet
+            <CreateNewMessage /> {/*this has not been merged yet*/}
           </>
         );
       }
