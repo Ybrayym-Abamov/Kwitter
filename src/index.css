@@ -12,3 +12,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+#register-button-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 20em;
+}
+.register-button {
+  width: 100%;
+}

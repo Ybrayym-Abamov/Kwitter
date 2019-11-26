@@ -10,8 +10,7 @@ export { default as UserDescription } from "./UserDescription";
 export { default as UserInfoBlock } from "./UserInfoBlock";
 export { default as UserList } from "./UserList";
 export { default as UserProfile } from "./UserProfile";
-// export { default as FullUserDescription} from "./FullUserDescription";
-
+export { default as RegisterForm } from "./RegisterForm";
 // components from other packages
 export { Switch, Route, Link } from "react-router-dom";
 export { default as Spinner } from "react-spinkit";
