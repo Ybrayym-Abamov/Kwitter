@@ -1,6 +1,7 @@
 // components from own project
 export { default as LoginForm } from "./LoginForm";
 export { default as TopMenu } from "./TopMenu";
+export { default as LogOut} from "./LogOut";
 export { default as UserInfoBlock } from "./UserInfoBlock"
 export { default as Sidebar } from "./Sidebar"
 export { default as CreateNewMessage } from "./CreateNewMessage" //not merged yet
