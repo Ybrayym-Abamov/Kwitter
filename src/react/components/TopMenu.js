@@ -2,10 +2,9 @@ import React from "react";
 import { Link } from ".";
 import "./TopMenu.css";
 import pages from "../pages";
-import { withAsyncAction } from "../HOCs";
+import { LogOut } from "./index";
 import { Menu, Icon } from 'antd';
 import 'antd/dist/antd.css';
-
 
 class TopMenu extends React.Component {
   state = {
@@ -19,13 +18,6 @@ class TopMenu extends React.Component {
     });
   };
 
-  handleLogout = event => {
-    event.preventDefault();
-    this.props.logout();
-  };
-
-  
-
   render() {
     return (
       <div id="menu">
@@ -36,7 +28,8 @@ class TopMenu extends React.Component {
               <Link to={pages.LiveFeed.path}>Live Feed</Link>
             </div>
           </Menu.Item>
-          <Menu.Item key="users" > 
+
+          <Menu.Item key="users" >
             <div id="usersButton">
               <Icon type="team" />
               <Link to={pages.Users.path}>User List</Link>
@@ -48,22 +41,18 @@ class TopMenu extends React.Component {
               <Link to={pages.Profile.path}>My Profile</Link>
             </div>
           </Menu.Item>
+
           <Menu.Item key="logout">
             {this.props.isAuthenticated && (
-              <div id="logout">
-                <Icon type="logout" />
-                <Link to="/" onClick={this.handleLogout}>
-                  Logout
-                </Link>
-              </div>
+              <LogOut />
             )}
           </Menu.Item>
         </Menu>
+
       </div>
     );
   }
 }
 
+export default TopMenu;
 
-
-export default withAsyncAction("auth", "logout")(TopMenu);

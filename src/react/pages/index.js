@@ -1,10 +1,10 @@
 import Home from "./Home";
 import Profile from "./Profile";
-import NotFound from "./NotFound";
 import Users from "./Users";
 import LiveFeed from "./LiveFeed";
 import Register from "./Register";
 import UpdateProfile from "./UpdateProfile";
+import NotFound from "./NotFound";
 // import CreateNewMessage from "./CreateNewMessage";
 
 

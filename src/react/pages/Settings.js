@@ -1,17 +1,17 @@
 import React from "react";
-import { MessageFeed, TopMenu, Sidebar } from "../components";
+import { TopMenu, Sidebar } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 
-class LiveFeed extends React.Component {
+class Settings extends React.Component {
   render() {
     return (
       <>
         <TopMenu isAuthenticated={this.props.isAuthenticated} />
         <Sidebar />
-        <MessageFeed />
+        <p>this is the settings page</p>
       </>
     );
   }
 }
 
-export default userIsAuthenticated(LiveFeed);
+export default userIsAuthenticated(Settings);

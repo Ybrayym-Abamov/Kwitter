@@ -1,7 +1,7 @@
 import React from "react";
 import { UserDescription, UserInfo } from "."
 // import { Link } from ".";
-import "./UserInfoBlock.css";
+import "./UserInfo.css";
 // import { userIsAuthenticated } from "../HOCs";
 import { Card } from 'antd';
 import 'antd/dist/antd.css';

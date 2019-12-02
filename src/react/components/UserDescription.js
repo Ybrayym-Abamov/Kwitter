@@ -1,6 +1,6 @@
 import React from "react";
 // import { Link } from ".";
-import "./UserDescription.css";
+// import "./UserDescription.css";
 
 class UserDescription extends React.Component {
     render() {
