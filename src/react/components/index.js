@@ -6,6 +6,7 @@ export { default as UserInfoBlock } from "./UserInfoBlock"
 export { default as Sidebar } from "./Sidebar"
 export { default as CreateNewMessage } from "./CreateNewMessage" //not merged yet
 export { default as RegisterForm } from "./RegisterForm";
+export { default as Message } from './Message';
 // components from other packages
 export { Switch, Route, Link } from "react-router-dom";
 export { default as Spinner } from "react-spinkit";

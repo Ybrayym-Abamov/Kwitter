@@ -1,6 +1,5 @@
 import React from "react";
 import { UserInfoBlock, CreateNewMessage } from "../components";
-
 //this component will be styled to be side-by-side with the main content component
 
 class Sidebar extends React.Component {
@@ -15,3 +14,4 @@ class Sidebar extends React.Component {
       }
 }
 export default Sidebar;
+
