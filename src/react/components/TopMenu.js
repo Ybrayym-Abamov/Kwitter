@@ -8,7 +8,7 @@ import 'antd/dist/antd.css';
 
 class TopMenu extends React.Component {
   state = {
-    current: 'mail',
+    current: 'home',
   };
 
   handleClick = e => {
@@ -35,6 +35,7 @@ class TopMenu extends React.Component {
               <Link to={pages.Users.path}>User List</Link>
             </div>
           </Menu.Item>
+          
           <Menu.Item key="profile" > 
             <div id="profileButton">
               <Icon type="user" />
