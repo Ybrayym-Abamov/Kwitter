@@ -1,7 +1,7 @@
 import React from "react";
 import { LoginForm, Link } from "../components";
 import { userIsNotAuthenticated } from "../HOCs";
-import "./Style.css"
+import "./Style.css";
 
 class Home extends React.Component {
   render() {

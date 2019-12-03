@@ -2,7 +2,7 @@
 import React from "react";
 import { RegisterForm, Link, TopMenu } from "../components";
 import { userIsNotAuthenticated } from "../HOCs";
-import "./Style.css"
+import "./Style.css";
 
 class Register extends React.Component {
   render() {

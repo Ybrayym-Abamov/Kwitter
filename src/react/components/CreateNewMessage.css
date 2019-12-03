@@ -1,4 +1,10 @@
-.field {
-   width: 17.3%;
-   height: 25%;
+form {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+}
+
+Button {
+   /* display: flex; */
+   align-self: flex-end;
 }
