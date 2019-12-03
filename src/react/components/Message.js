@@ -41,7 +41,7 @@ class Message extends Component {
                     <ul>
                         {items.map(item => (
                             <li key={item.id}>
-                               Username: {item.username} | Message: {item.text} | Time: {moment(item.createdAt).subtract(10, 'days').calendar()}
+                               Username: {item.username} | Message: {item.text} | Time: {moment(item.createdAt).startOf('hour').fromNow()}
                             </li>
                         ))}  
                     </ul>
