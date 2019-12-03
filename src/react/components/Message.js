@@ -1,24 +1,55 @@
-import React from "react";
-import { UserInfo } from ".";
-// import "./Message.css";
-import { Card } from 'antd';
+import React, { Component } from "react";
 import 'antd/dist/antd.css';
+import moment from 'moment'
+
+class Message extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            items: [],
+            isLoaded: false,
+        }
+    }
+
+    componentDidMount() {
+
+        fetch('https://kwitter-api.herokuapp.com/messages?limit=35&offset=0')
+            .then(res => res.json())
+            .then(json => {
+                this.setState({
+                    isLoaded: true,
+                    items: json.messages,
+                })
+            });
+    }
 
 
-
-class Message extends React.Component {
     render() {
-        return (
-           <>
-                <div id="message">
-                    <UserInfo />
-                    <Card>
-                        <p>this should be where the message shows up, put that code here</p>
-                        <p>userinfo and the message card should be side-by-side in two columns, the userinfo the thinner column</p>
-                    </Card>
-                </div>
-           </>
-        );
-      }
+
+        var { isLoaded, items } = this.state;
+        if (!isLoaded) {
+            return <div>Loading...</div>;
+        }
+
+        else {
+
+            return (
+                <div className='Message'>
+                    <h1>Message Feed</h1>
+
+                    <ul>
+                        {items.map(item => (
+                            <li key={item.id}>
+                               Username: {item.username} | Message: {item.text} | Time: {moment(item.createdAt).startOf('hour').fromNow()}
+                            </li>
+                        ))}  
+                    </ul>
+
+            </div>
+            )
+        }
+    }
 }
+
 export default Message;

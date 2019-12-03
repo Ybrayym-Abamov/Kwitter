@@ -5,6 +5,7 @@ import "./UserInfo.css";
 // import { userIsAuthenticated } from "../HOCs";
 import { Card } from 'antd';
 import 'antd/dist/antd.css';
+import './CreateNewMessage';
 
 class UserInfoBlock extends React.Component {
 
