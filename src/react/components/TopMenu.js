@@ -25,21 +25,20 @@ class TopMenu extends React.Component {
           <Menu.Item key="home" >
             <div id="homeButton">
               <Icon type="home" />
-              <Link to={pages.Home.path}>Home</Link>
+              <Link to={pages.LiveFeed.path}>Live Feed</Link>
             </div>
           </Menu.Item>
 
           <Menu.Item key="users" >
             <div id="usersButton">
-              <Icon type="heart" />
-              <Link to={pages.Users.path}>Users</Link>
+              <Icon type="team" />
+              <Link to={pages.Users.path}>User List</Link>
             </div>
           </Menu.Item>
-
-          <Menu.Item key="setting" >
-            <div id="settingsButton">
-              <Icon type="setting" />
-              <Link to={pages.Settings.path}>Settings</Link>
+          <Menu.Item key="profile" > 
+            <div id="profileButton">
+              <Icon type="user" />
+              <Link to={pages.Profile.path}>My Profile</Link>
             </div>
           </Menu.Item>
 

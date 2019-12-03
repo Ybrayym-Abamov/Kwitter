@@ -1,5 +1,5 @@
 import React from "react";
-import { TopMenu, Sidebar } from "../components";
+import { UserList, TopMenu, Sidebar } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 
 class Users extends React.Component {
@@ -8,8 +8,10 @@ class Users extends React.Component {
       <>
         <TopMenu isAuthenticated={this.props.isAuthenticated} />
         <Sidebar />
-        <p>this is the users page</p>
-        <Sidebar />
+          <h3>this is the users page</h3>
+        <UserList />
+          
+        
       </>
     );
   }
