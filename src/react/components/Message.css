@@ -1,3 +1,8 @@
-.Message {
-    
+.timestamp {
+    font-style: italic;
+    font-size: 8pt;
+}
+
+.username {
+    font-style: bold; 
 }

@@ -8,7 +8,7 @@ import 'antd/dist/antd.css';
 
 class TopMenu extends React.Component {
   state = {
-    current: 'home',
+    current: "home",
   };
 
   handleClick = e => {
@@ -23,24 +23,24 @@ class TopMenu extends React.Component {
       <div id="menu">
         <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
           <Menu.Item key="home" >
-            <div id="homeButton">
+            <Link to={pages.LiveFeed.path}>
               <Icon type="home" />
               <Link to={pages.LiveFeed.path}>Live Feed</Link>
-            </div>
+            </Link>
           </Menu.Item>
 
           <Menu.Item key="users" >
-            <div id="usersButton">
+            <Link to={pages.Users.path}>
               <Icon type="team" />
-              <Link to={pages.Users.path}>User List</Link>
-            </div>
+              User List
+            </Link>
           </Menu.Item>
           
           <Menu.Item key="profile" > 
-            <div id="profileButton">
+            <Link to={pages.Profile.path}>
               <Icon type="user" />
-              <Link to={pages.Profile.path}>My Profile</Link>
-            </div>
+              My Profile
+              </Link>
           </Menu.Item>
 
           <Menu.Item key="logout">

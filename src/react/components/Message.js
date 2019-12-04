@@ -1,6 +1,10 @@
 import React, { Component } from "react";
+import { Card, Avatar } from 'antd';
 import 'antd/dist/antd.css';
-import moment from 'moment'
+import "./Message.css";
+import moment from 'moment';
+
+const { Meta } = Card;
 
 class Message extends Component {
 
@@ -36,15 +40,27 @@ class Message extends Component {
 
             return (
                 <div className='Message'>
-                    <h1>Message Feed</h1>
-
-                    <ul>
+                    <h3>Latest Kweets</h3>
+                    {/* <Card>
+                    {items.map(item => (
+                        <Meta key={item.id}
+                        avatar={<Avatar size={64} src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />} //we'll need to make this link to whatever icon the user uploads
+                        title={item.username} 
+                        {item.text}
+                        {moment(item.createdAt).startOf('hour').fromNow()}
+                        />
+                    ))}
+                    </Card> */}
+                      
+                    <div>
                         {items.map(item => (
-                            <li key={item.id}>
-                               Username: {item.username} | Message: {item.text} | Time: {moment(item.createdAt).startOf('hour').fromNow()}
-                            </li>
+                            <Card key={item.id}>
+                               <div class="username">{item.username}</div>
+                               <div class="post">{item.text}</div>
+                               <div class="timestamp">{moment(item.createdAt).startOf('hour').fromNow()}</div>
+                            </Card>
                         ))}  
-                    </ul>
+                    </div>
 
             </div>
             )
