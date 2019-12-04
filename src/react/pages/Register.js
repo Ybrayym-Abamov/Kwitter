@@ -1,6 +1,6 @@
  
 import React from "react";
-import { RegisterForm, Link, TopMenu } from "../components";
+import { RegisterForm, Link } from "../components";
 import { userIsNotAuthenticated } from "../HOCs";
 import "./Style.css";
 

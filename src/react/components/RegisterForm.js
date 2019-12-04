@@ -4,7 +4,6 @@ import { withAsyncAction } from "../HOCs";
 import "./RegisterForm.css";
 import { Form, Icon, Input, Button } from "antd";
 import "antd/dist/antd.css";
-import FormItem from "antd/lib/form/FormItem";
 
 class RegisterForm extends React.Component {
   state = { username: "", password: "", displayName: "" };
