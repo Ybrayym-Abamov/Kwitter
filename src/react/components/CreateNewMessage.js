@@ -35,7 +35,7 @@ class CreateNewMessage extends Component {
                 <p>{message}</p>
                 <form onSubmit={this.handleMessage}>
                     <p><TextArea rows={4} type='text' placeholder='Your Kweet' message='message' onChange={this.handleInput} /></p>
-                    <Button icon="edit" disabled>Kweet</Button>
+                    <Button icon="edit">Kweet</Button>
                 </form>
             </div>
         )
