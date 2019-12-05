@@ -64,7 +64,7 @@ export const deleteUser = () => (dispatch, getState) => {
 
 export const updateUser = updateData => (dispatch, getState) => {
   dispatch({ type: UPDATEUSER.START });
-
+  
   const { username, token } = getState().auth.login.result;
 
   return fetch(url + "/" + username, {
