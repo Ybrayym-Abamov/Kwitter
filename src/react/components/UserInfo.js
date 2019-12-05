@@ -47,7 +47,7 @@ class UserInfoBlock extends React.Component {
                 <Card>
                     <Meta
                         avatar={<Avatar size={64} src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />} //we'll need to make this link to whatever icon the user uploads
-                        title={this.state.username} // we'll need to make this show the name for the user account
+                        title={this.state.username}
                     />
                 </Card>
             );
