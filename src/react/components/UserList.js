@@ -1,5 +1,5 @@
 import React from "react";
-import { UserInfoBlock } from ".";
+// import { UserInfoBlock } from ".";
 // import { Link } from ".";
 // import "./UserList.css";
 
@@ -7,7 +7,6 @@ class UserList extends React.Component {
     render() {
         return (
           <>
-            {/* <UserInfoBlock /> */}
             <p>This will be a feed of userinfoblocks for all registered users.</p>
             <p>can you imagine?</p>
             <p>a whole list of the currently registered users</p>
