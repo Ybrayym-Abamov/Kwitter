@@ -56,12 +56,12 @@ class Message extends Component {
                         {items.map(item => (
                             <Card key={item.id} class="userpost">
                                 <div class="postinfo">
-                                    <div class="timestamp">{moment(item.createdAt).startOf('hour').fromNow()}</div>
                                     <Meta key={item.id}
                                         avatar={<Avatar size={64} src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />} //we'll need to make this link to whatever icon the user uploads
                                         title={item.username}
                                         description={item.text}
                                     />
+                                    <div class="timestamp">{moment(item.createdAt).startOf('hour').fromNow()}</div>
                                 </div>
                             </Card>
                         ))}  

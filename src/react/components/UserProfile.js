@@ -2,7 +2,7 @@ import React from "react";
 import { UserInfo, UserDescription } from ".";
 import { Link } from "../components";
 import pages from "../pages";
-import { Card, Button } from 'antd';
+import { Card, Button, Icon } from 'antd';
 import 'antd/dist/antd.css';
 
 
@@ -16,8 +16,13 @@ class UserProfile extends React.Component {
             <UserInfo />
           <Card>
             <UserDescription />
-            <p>message counter  |  registration date</p>
-            <Button type="primary" ><Link to={pages.UpdateProfile.path}>Edit Profile</Link></Button>
+            <p>message counter code here  |  registration date code here</p>
+            <Button type="primary" key="edit">
+              <Link to={pages.UpdateProfile.path}>
+                  Edit Profile  
+                <Icon type="edit" />
+              </Link>
+            </Button>
           </Card>
         </>
         );

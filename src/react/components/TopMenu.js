@@ -25,7 +25,7 @@ class TopMenu extends React.Component {
           <Menu.Item key="home" >
             <Link to={pages.LiveFeed.path}>
               <Icon type="home" />
-              <Link to={pages.LiveFeed.path}>Live Feed</Link>
+              Live Feed
             </Link>
           </Menu.Item>
 

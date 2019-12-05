@@ -1,11 +1,12 @@
 .ant-card-body {
     padding: 10px;
     display: flex;
+    flex-direction: column;
 }
 
 .userpost {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: space-between;
 }
 .timestamp {

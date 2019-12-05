@@ -17,9 +17,6 @@ class UserInfo extends React.Component {
                 avatar={<Avatar size={64} src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />} //we'll need to make this link to whatever icon the user uploads
                 title="User Name" // we'll need to make this show the name for the user account
                 />
-                <div class="editbutton">
-                Edit Profile
-                </div>
             </Card>
             );
         }
