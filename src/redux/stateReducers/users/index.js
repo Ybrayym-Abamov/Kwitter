@@ -1,2 +1,2 @@
 export { default as postUser } from "./postUser";
-export { default as patchUser } from "./patchUser";
+export { default as deleteUser } from "./deleteUser";
