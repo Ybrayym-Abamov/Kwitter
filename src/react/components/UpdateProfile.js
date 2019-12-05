@@ -85,4 +85,4 @@ class UpdateProfile extends React.Component {
   }
 }
 
-export default withAsyncAction("users", "patchUser")(UpdateProfile);;
+export default withAsyncAction("users", "updateUser")(UpdateProfile);
