@@ -3,8 +3,8 @@ import { Link } from ".";
 import "./TopMenu.css";
 import pages from "../pages";
 import { LogOut } from "./index";
-import { Menu, Icon } from 'antd';
-import 'antd/dist/antd.css';
+import { Menu, Icon } from "antd";
+import "antd/dist/antd.css";
 
 class TopMenu extends React.Component {
   state = {
@@ -12,18 +12,22 @@ class TopMenu extends React.Component {
   };
 
   handleClick = e => {
-    console.log('click ', e);
+    console.log("click ", e);
     this.setState({
-      current: e.key,
+      current: e.key
     });
   };
 
   render() {
     return (
       <div id="menu">
-        <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
-          <Menu.Item key="home" >
-            <Link to={pages.LiveFeed.path}>
+        <Menu
+          onClick={this.handleClick}
+          selectedKeys={[this.state.current]}
+          mode="horizontal"
+        >
+          <Menu.Item key="home">
+          <Link to={pages.LiveFeed.path}>
               <Icon type="home" />
               Live Feed
             </Link>
@@ -44,16 +48,12 @@ class TopMenu extends React.Component {
           </Menu.Item>
 
           <Menu.Item key="logout">
-            {this.props.isAuthenticated && (
-              <LogOut />
-            )}
+            {this.props.isAuthenticated && <LogOut />}
           </Menu.Item>
         </Menu>
-
       </div>
     );
   }
 }
 
 export default TopMenu;
-

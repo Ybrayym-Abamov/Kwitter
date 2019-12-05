@@ -25,7 +25,7 @@ class RegisterForm extends React.Component {
           <Form.Item>
             <label htmlFor="username">Username</label>
             <Input
-            prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
+              prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
               type="text"
               name="username"
               autoFocus
@@ -46,15 +46,19 @@ class RegisterForm extends React.Component {
           <Form.Item>
             <label htmlFor="password">Password</label>
             <Input
-            prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
+              prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
               type="password"
               name="password"
               required
               onChange={this.handleChange}
             />
           </Form.Item>
-          <Button type="primary"
-            htmlType="submit" className="register-form-button" disabled={loading}>
+          <Button
+            type="primary"
+            htmlType="submit"
+            className="register-form-button"
+            disabled={loading}
+          >
             Register
           </Button>
         </Form>

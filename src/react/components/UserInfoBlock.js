@@ -12,7 +12,7 @@ class UserInfoBlock extends React.Component {
     render() {
         return (
         <div id="userinfoblock">
-            <UserInfo />
+            <UserInfo username={JSON.parse(localStorage.login).result.username}/>
             <Card>
                 <UserDescription /> 
                 <p/>

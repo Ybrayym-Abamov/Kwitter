@@ -1,5 +1,5 @@
 import React from "react";
-import { UserInfo, UserDescription } from ".";
+import { UserInfo, UserDescription, DeleteUserButton } from ".";
 import { Link } from "../components";
 import pages from "../pages";
 import { Card, Button, Icon } from 'antd';
