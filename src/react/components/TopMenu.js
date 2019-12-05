@@ -46,7 +46,7 @@ class TopMenu extends React.Component {
               My Profile
               </Link>
           </Menu.Item>
-
+          
           <Menu.Item key="logout">
             {this.props.isAuthenticated && <LogOut />}
           </Menu.Item>

@@ -11,13 +11,13 @@ class Profile extends React.Component {
           <Sidebar />
         </div>
         <div class="col2">
-            <TopMenu isAuthenticated={this.props.isAuthenticated} />
-            <div id="userprofile">
-          <h3>this section is the full profile of a user</h3>
-          <UserProfile />
-        </div>
-        <hr />
-        <div id="userfeed">
+          <TopMenu isAuthenticated={this.props.isAuthenticated} />
+          <div class="content">
+            <h3>this section is the full profile of a user</h3>
+            <UserProfile />
+          </div>
+            <hr />
+          <div class="content">
           <h3>this section is the feed of all messages posted by this particular user</h3>
           <MessageFeed />
         </div>
