@@ -1,5 +1,5 @@
 import { domain, jsonHeaders, handleJsonResponse } from "./constants";
-import { POSTUSER } from "../actionTypes";
+import { POSTUSER,PATCHUSER } from "../actionTypes";
 import { login } from "./auth";
 
 const url = domain + "/users";
@@ -33,5 +33,29 @@ const _postUser = registerData => dispatch => {
         })
       )
     );
+  };
+
+  const _patchUser = userData => dispatch => {
+    dispatch({ type: POSTUSER.START });
+  
+    return fetch(`${url}/${userData.username}`, {
+      method: "PATCH",
+      headers: jsonHeaders,
+      body: JSON.stringify(userData)
+    })
+      .then(handleJsonResponse)
+      .then(result => {
+        return dispatch({
+          type: PATCHUSER.SUCCESS,
+          payload: result
+        });
+      })
+      .catch(err => {
+        return Promise.reject(dispatch({ type: PATCHUSER.FAIL, payload: err }));
+      });
+  };
+  
+  export const patchUser = userData => dispatch => {
+    return dispatch(_patchUser(userData));
   };
   
