@@ -23,6 +23,7 @@ class UserProfile extends React.Component {
                 <Icon type="edit" />
               </Link>
             </Button>
+            <DeleteUserButton />
           </Card>
         </>
         );
