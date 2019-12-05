@@ -13,7 +13,7 @@ class NotFound extends React.Component {
       title="404" 
       subTitle="Sorry, the page you visited does not exist...yet">
       <Button type="primary" class="goback">
-        <Link to={pages.Home.path}>Go back to your live feed</Link>
+        <Link to={pages.LiveFeed.path}>Go back to your live feed</Link>
       </Button>
     </Result>
     );

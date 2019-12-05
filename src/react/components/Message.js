@@ -54,10 +54,15 @@ class Message extends Component {
                       
                     <div>
                         {items.map(item => (
-                            <Card key={item.id}>
-                               <div class="username">{item.username}</div>
-                               <div class="post">{item.text}</div>
-                               <div class="timestamp">{moment(item.createdAt).startOf('hour').fromNow()}</div>
+                            <Card key={item.id} class="userpost">
+                                <div class="postinfo">
+                                    <div class="timestamp">{moment(item.createdAt).startOf('hour').fromNow()}</div>
+                                    <Meta key={item.id}
+                                        avatar={<Avatar size={64} src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />} //we'll need to make this link to whatever icon the user uploads
+                                        title={item.username}
+                                        description={item.text}
+                                    />
+                                </div>
                             </Card>
                         ))}  
                     </div>

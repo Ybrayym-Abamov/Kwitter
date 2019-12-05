@@ -1,8 +1,16 @@
+.ant-card-body {
+    padding: 10px;
+    display: flex;
+}
+
+.userpost {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .timestamp {
     font-style: italic;
     font-size: 8pt;
-}
-
-.username {
-    font-style: bold; 
+    display: flex;
+    justify-content: flex-end;
 }

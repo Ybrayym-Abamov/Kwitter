@@ -1,0 +1,11 @@
+.ant-card-meta {
+    display: flex;
+    align-items: center;
+}
+
+.editbutton {
+    font-style: italic;
+    font-size: 8pt;
+    display: flex;
+    justify-content: flex-end;
+}
