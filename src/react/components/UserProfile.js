@@ -7,7 +7,7 @@ import 'antd/dist/antd.css';
 
 
 // import { Link } from ".";
-// import "./UserProfile.css";
+import "./UserProfile.css";
 
 class UserProfile extends React.Component {
     render() {
@@ -17,13 +17,15 @@ class UserProfile extends React.Component {
           <Card>
             <UserDescription />
             <p>message counter code here  |  registration date code here</p>
-            <Button type="primary" key="edit">
+            <div id="accountbuttons">
+              <Button type="primary" block>
               <Link to={pages.UpdateProfile.path}>
-                  Edit Profile  
-                <Icon type="edit" />
-              </Link>
-            </Button>
-            <DeleteUserButton />
+              <Icon type="edit" />
+                Edit Profile  
+                </Link>
+              </Button>
+              <DeleteUserButton />
+            </div>
           </Card>
         </>
         );
