@@ -9,6 +9,8 @@ const initialState = {
 
 const updateUser = (state = initialState, action) => {
   switch (action.type) {
+    case UPDATEUSER.SUCCESS:
+      return { ...initialState };
     default:
       return state;
   }
