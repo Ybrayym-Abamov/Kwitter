@@ -22,33 +22,43 @@ class RegisterForm extends React.Component {
     return (
       <React.Fragment>
         <Form id="register-form" onSubmit={this.handleLogin}>
-          <label htmlFor="username">Username</label>
-          <Input
-          prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
-            type="text"
-            name="username"
-            autoFocus
-            required
-            onChange={this.handleChange}
-          />
-          <label htmlFor="displayName">Display Name</label>
-          <Input
-            type="text"
-            name="displayName"
-            autoFocus
-            required
-            onChange={this.handleChange}
-          />
-          <label htmlFor="password">Password</label>
-          <Input
-          prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
-            type="password"
-            name="password"
-            required
-            onChange={this.handleChange}
-          />
-          <Button type="primary"
-            htmlType="submit" className="register-form-button" disabled={loading}>
+          <Form.Item>
+            <label htmlFor="username">Username</label>
+            <Input
+              prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
+              type="text"
+              name="username"
+              autoFocus
+              required
+              onChange={this.handleChange}
+            />
+          </Form.Item>
+          <Form.Item>
+            <label htmlFor="displayName">Display Name</label>
+            <Input
+              type="text"
+              name="displayName"
+              autoFocus
+              required
+              onChange={this.handleChange}
+            />
+          </Form.Item>
+          <Form.Item>
+            <label htmlFor="password">Password</label>
+            <Input
+              prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
+              type="password"
+              name="password"
+              required
+              onChange={this.handleChange}
+            />
+          </Form.Item>
+          <Button
+            type="primary"
+            htmlType="submit"
+            className="register-form-button"
+            disabled={loading}
+          >
             Register
           </Button>
         </Form>

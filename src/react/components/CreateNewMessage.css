@@ -1,4 +1,9 @@
-.field {
-   width: 17.3%;
-   height: 25%;
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  /* display: flex; */
+  align-self: flex-end;
 }
