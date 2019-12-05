@@ -1,9 +1,9 @@
 import React from "react";
 import { withAsyncAction } from "../HOCs";
 /*import { UserInfo, UserDescription, DeleteUserButton } from ".";*/
-import { Link } from "../components";
-import pages from "../pages";
-import { Card, Button } from "antd";
+// import { Link } from "../components";
+// import pages from "../pages";
+// import { Card, Button } from "antd";
 import "antd/dist/antd.css";
 
 // import { Link } from ".";
