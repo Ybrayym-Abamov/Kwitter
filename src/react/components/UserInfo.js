@@ -35,7 +35,7 @@ class UserInfoBlock extends React.Component {
 
     render() {
 
-        var { isLoaded, user } = this.state;
+        var { isLoaded } = this.state;
         if (!isLoaded) {
             return <div>Loading...</div>;
         }
