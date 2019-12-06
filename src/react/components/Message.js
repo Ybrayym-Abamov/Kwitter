@@ -1,55 +1,68 @@
 import React, { Component } from "react";
+import { Card, Avatar } from 'antd';
 import 'antd/dist/antd.css';
-import moment from 'moment'
+import "./Message.css";
+import moment from 'moment';
+import { withAsyncAction } from "../HOCs";
+
+
+const { Meta } = Card;
 
 class Message extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            items: [],
-            isLoaded: false,
-        }
+    state = {
+        items: [],
+        isLoaded: false,
     }
 
-    componentDidMount() {
 
-        fetch('https://kwitter-api.herokuapp.com/messages?limit=35&offset=0')
-            .then(res => res.json())
-            .then(json => {
-                this.setState({
-                    isLoaded: true,
-                    items: json.messages,
-                })
-            });
+    componentDidMount() {
+        this.props.getUserMessages(this.props.username)
     }
 
 
     render() {
-
-        var { isLoaded, items } = this.state;
-        if (!isLoaded) {
+        
+        if (this.props.result === null) {
             return <div>Loading...</div>;
         }
-
-        else {
+        const getMessages = this.props.result.messages
+        
 
             return (
+                
                 <div className='Message'>
-                    <h1>Message Feed</h1>
+                    <h3>Latest Kweets</h3>
+                    {/* <Card>
+                    {items.map(item => (
+                        <Meta key={item.id}
+                        avatar={<Avatar size={64} src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />} //we'll need to make this link to whatever icon the user uploads
+                        title={item.username} 
+                        {item.text}
+                        {moment(item.createdAt).startOf('hour').fromNow()}
+                        />
+                    ))}
+                    </Card> */}
 
-                    <ul>
-                        {items.map(item => (
-                            <li key={item.id}>
-                               Username: {item.username} | Message: {item.text} | Time: {moment(item.createdAt).startOf('hour').fromNow()}
-                            </li>
-                        ))}  
-                    </ul>
+                    <div>
+                        {getMessages.map(item => (
+                            <Card key={item.id} class="userpost">
+                                <div class="postinfo">
+                                    <Meta key={item.id}
+                                        avatar={<Avatar size={64} src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />} //we'll need to make this link to whatever icon the user uploads
+                                        title={item.username}
+                                        description={item.text}
+                                    />
+                                    <div class="timestamp">{moment(item.createdAt).startOf('hour').fromNow()}</div>
+                                </div>
+                            </Card>
+                        ))}
+                    </div>
 
-            </div>
+                </div>
             )
         }
     }
-}
 
-export default Message;
+
+export default withAsyncAction("messages", "getUserMessages") (Message);

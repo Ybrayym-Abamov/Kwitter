@@ -2,8 +2,8 @@ form {
   display: flex;
   flex-direction: column;
 }
-
-button {
-  /* display: flex; */
-  align-self: flex-end;
+ 
+Button {
+   /* display: flex; */
+   align-self: flex-end;
 }

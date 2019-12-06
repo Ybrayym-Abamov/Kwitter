@@ -1,4 +1,7 @@
 .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 10px;
     margin: 0;
     background-color: white;
@@ -6,3 +9,20 @@
     border-radius: 15px;
 }
 
+.logo {
+    margin: auto;
+}
+
+h2 {
+    /* font-style: italic;
+    font-size: 11pt; */
+    text-align: center;
+    font: italic 12pt lightgray;
+}
+
+hr {
+    width: 100%;
+    margin: auto;
+    border: 0.5px solid lightgray;
+    margin: 3px 0 10px 0;
+}
