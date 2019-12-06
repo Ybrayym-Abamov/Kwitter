@@ -6,18 +6,18 @@ import "./Style.css";
 class Profile extends React.Component {
   render() {
     return (
-      <div class="maincontent">
-        <div class="col1">
+      <div className="maincontent">
+        <div className="col1">
           <Sidebar />
         </div>
-        <div class="col2">
+        <div className="col2">
           <TopMenu isAuthenticated={this.props.isAuthenticated} />
-          <div class="content">
+          <div className="content">
             <h3>this section is the full profile of a user</h3>
             <UserProfile />
           </div>
             <hr />
-          <div class="content">
+          <div className="content">
           <h3>this section is the feed of all messages posted by this particular user</h3>
           <MessageFeed />
         </div>

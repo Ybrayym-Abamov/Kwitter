@@ -10,7 +10,7 @@ class Message extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
+        this.state = { 
             items: [],
             isLoaded: false,
         }
@@ -18,7 +18,7 @@ class Message extends Component {
 
     componentDidMount() {
 
-        fetch('https://kwitter-api.herokuapp.com/messages?limit=35&offset=0')
+        let messagePollingID = fetch('https://kwitter-api.herokuapp.com/messages?limit=35&offset=0')
             .then(res => res.json())
             .then(json => {
                 this.setState({
@@ -26,8 +26,12 @@ class Message extends Component {
                     items: json.messages,
                 })
             });
-    }
-
+            
+        }
+        
+        messagePollingID = setInterval((messagePollingID) => {
+            console.log("polling");
+        }, 5000)
 
     render() {
 
@@ -40,28 +44,17 @@ class Message extends Component {
 
             return (
                 <div className='Message'>
-                    <h3>Latest Kweets</h3>
-                    {/* <Card>
-                    {items.map(item => (
-                        <Meta key={item.id}
-                        avatar={<Avatar size={64} src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />} //we'll need to make this link to whatever icon the user uploads
-                        title={item.username} 
-                        {item.text}
-                        {moment(item.createdAt).startOf('hour').fromNow()}
-                        />
-                    ))}
-                    </Card> */}
-                      
+                    <h3>Latest Kweets</h3>                      
                     <div>
                         {items.map(item => (
-                            <Card key={item.id} class="userpost">
-                                <div class="postinfo">
+                            <Card key={item.id} className="userpost">
+                                <div className="postinfo">
                                     <Meta key={item.id}
                                         avatar={<Avatar size={64} src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />} //we'll need to make this link to whatever icon the user uploads
                                         title={item.username}
                                         description={item.text}
                                     />
-                                    <div class="timestamp">{moment(item.createdAt).startOf('hour').fromNow()}</div>
+                                    <div className="timestamp">{moment(item.createdAt).startOf('hour').fromNow()}</div>
                                 </div>
                             </Card>
                         ))}  

@@ -7,7 +7,7 @@ class Home extends React.Component {
   render() {
     return (
       <>
-        <div class="form">
+        <div className="form">
           <h2>Your favorite microblogging platform</h2>
           <LoginForm />
           <h4>
