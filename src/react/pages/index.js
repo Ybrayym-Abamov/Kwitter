@@ -3,7 +3,7 @@ import Profile from "./Profile";
 import Users from "./Users";
 import LiveFeed from "./LiveFeed";
 import Register from "./Register";
-import UpdateProfile from "./UpdateProfile";
+// import EditProfile from "./EditProfile";
 import NotFound from "./NotFound";
 // import CreateNewMessage from "./CreateNewMessage";
 
@@ -14,7 +14,7 @@ export default {
   Users: { path: "/users", component: Users },
   LiveFeed: { path: "/livefeed", component: LiveFeed },
   Register: { path: "/register", component: Register },
-  UpdateProfile: { path: "/updateprofile", component: UpdateProfile},
+  // UpdateProfile: { path: "/editprofile", component: EditProfile},
   NotFound: { path: "*", component: NotFound },
   // CreateNewMessage: { path: "/createnewmessage", component: CreateNewMessage }
 };

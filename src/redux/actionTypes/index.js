@@ -12,6 +12,7 @@ export const LOGIN = createActionTypes("LOGIN");
 export const LOGOUT = createActionTypes("LOGOUT");
 // users
 export const POSTUSER = createActionTypes("POSTUSER");
+export const UPDATEUSER = createActionTypes("UPDATEUSER");
 export const DELETEUSER = createActionTypes("DELETEUSER");
 //messages
 export const POSTMESSAGE = createActionTypes("POSTMESSAGE");

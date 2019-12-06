@@ -1,8 +1,6 @@
 import React from "react";
-import { UserInfo, UserDescription, DeleteUserButton } from ".";
-import { Link } from "../components";
-import pages from "../pages";
-import { Card, Button, Icon } from 'antd';
+import { UserInfo, UserDescription, DeleteUserButton, UpdateProfile } from ".";
+import { Card } from 'antd';
 import 'antd/dist/antd.css';
 
 
@@ -10,23 +8,56 @@ import 'antd/dist/antd.css';
 // import "./UserProfile.css";
 
 class UserProfile extends React.Component {
-    render() {
-        return (
-        <>
-            <UserInfo />
-          <Card>
-            <UserDescription />
-            <p>message counter code here  |  registration date code here</p>
-            <Button type="primary" key="edit">
-              <Link to={pages.UpdateProfile.path}>
-                  Edit Profile  
-                <Icon type="edit" />
-              </Link>
-            </Button>
-            <DeleteUserButton />
-          </Card>
-        </>
-        );
-      }
+  state = {
+    user: {},
+    isLoaded: false
+  };  
+
+  componentDidMount() {
+    const userName = JSON.parse(localStorage.login).result.username;
+    const url = `https://kwitter-api.herokuapp.com/users/${userName}`;
+    const jsonHeaders = {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    };
+
+    fetch(url, {
+      method: "GET",
+      headers: jsonHeaders
+    })
+      .then(res => res.json())
+      .then(json => {
+        console.log(json)
+        this.setState({
+          isLoaded: true,
+          user: json.user
+        });
+      });
+  }
+
+  getUpdateProfileDom(){
+    const { isLoaded,user } = this.state;
+    if (isLoaded) {
+      return <UpdateProfile user={user}/>
+    }
+    else{
+      return '';
+    }
+  }
+
+  render() {
+    
+    return (
+      <>
+        <UserInfo />
+        <Card>
+          <UserDescription />
+          <p>message counter code here  |  registration date code here</p>
+          {this.getUpdateProfileDom()}
+          <DeleteUserButton />
+        </Card>
+      </>
+    );
+  }
 }
 export default UserProfile;
