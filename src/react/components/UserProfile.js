@@ -1,6 +1,5 @@
 import React from "react";
-import { UserInfo, UserDescription, DeleteUserButton } from ".";
-import { Link } from "../components";
+import { UserInfo, UserDescription, DeleteUserButton, UpdateProfile, Link } from ".";
 import pages from "../pages";
 import { Card, Button, Icon } from 'antd';
 import 'antd/dist/antd.css';
@@ -19,10 +18,10 @@ class UserProfile extends React.Component {
             <p>message counter code here  |  registration date code here</p>
             <div id="accountbuttons">
               <Button type="primary" block>
-              <Link to={pages.UpdateProfile.path}>
+              {/* <Link to={pages.UpdateProfile.path}> */}
               <Icon type="edit" />
                 Edit Profile  
-                </Link>
+                {/* </Link> */}
               </Button>
               <DeleteUserButton />
             </div>
