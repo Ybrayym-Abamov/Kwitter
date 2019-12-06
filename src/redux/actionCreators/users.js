@@ -1,5 +1,5 @@
 import { domain, jsonHeaders, handleJsonResponse } from "./constants";
-import { POSTUSER, DELETEUSER, UPDATEUSER } from "../actionTypes";
+import { POSTUSER, DELETEUSER, UPDATEUSER, LOGOUT } from "../actionTypes";
 import { login } from "./auth";
 
 const url = domain + "/users";
@@ -53,10 +53,16 @@ export const deleteUser = () => (dispatch, getState) => {
     })
     .catch(err => {
       return Promise.reject(dispatch({ type: DELETEUSER.FAIL, payload: err }));
+    })
+    .then(() => {
+      return dispatch({
+        type: LOGOUT.SUCCESS,
+        payload: { statusCode: 200 }
+      });
     });
 };
 
-export const updateUser = (updateData) => (dispatch, getState) => {
+export const updateUser = updateData => (dispatch, getState) => {
   dispatch({ type: UPDATEUSER.START });
   
   const { username, token } = getState().auth.login.result;
