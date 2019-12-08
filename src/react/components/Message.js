@@ -17,7 +17,8 @@ class Message extends Component {
 
 
     componentDidMount() {
-        this.props.getUserMessages(this.props.username)
+        let messagePollingID = this.props.getUserMessages(this.props.username);
+        setInterval((messagePollingID) => {console.log("polling")}, 5000);
     }
 
 
