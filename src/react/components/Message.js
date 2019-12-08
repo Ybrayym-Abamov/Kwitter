@@ -32,9 +32,9 @@ class Message extends Component {
             return (
                 
                 <div className='Message'>
-                    <h3>Latest Kweets</h3>                      
+                    <h3>Latest Kweets</h3>
                     <div>
-                        {items.map(item => (
+                        {getMessages.map(item => (
                             <Card key={item.id} className="userpost">
                                 <div className="postinfo">
                                     <Meta key={item.id}
@@ -42,7 +42,7 @@ class Message extends Component {
                                         title={item.username}
                                         description={item.text}
                                     />
-                                    <div className="timestamp">{moment(item.createdAt).startOf('hour').fromNow()}</div>
+                                    <div className="timestamp">{moment(item.createdAt).startOf('minutes').fromNow()}</div>
                                 </div>
                             </Card>
                         ))}

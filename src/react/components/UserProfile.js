@@ -1,7 +1,7 @@
 import React from "react";
-import { UserInfo, UserDescription, DeleteUserButton, UpdateProfile, Link } from ".";
-import pages from "../pages";
-import { Card, Button, Icon } from 'antd';
+import { UserInfo, UserDescription, DeleteUserButton, UpdateProfile } from ".";
+// import pages from "../pages";
+import { Card} from 'antd';
 import 'antd/dist/antd.css';
 
 
