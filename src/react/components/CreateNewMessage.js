@@ -2,50 +2,65 @@ import React, { Component } from "react";
 import { Input, Button } from "antd";
 import "antd/dist/antd.css";
 import "./CreateNewMessage.css";
+import { Spinner } from ".";
+import { postMessageThenReloadMessages as postMessage } from "../../redux/actionCreators/messages";
+import {connect} from "react-redux"
+
 
 const { TextArea } = Input;
 
 class CreateNewMessage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      message: ""
+    state = {
+        text: ""
     };
-  }
 
-  handleMessage = event => {
-    event.preventDefault();
-    const data = this.state;
-    console.log("Your kweet is", data);
-  };
 
-  handleInput = event => {
-    event.preventDefault();
-    this.setState({
-      [event.target.message]: event.target.value
-    });
-  };
-  render() {
-    const { message } = this.state;
-    return (
-      <div className="field">
-        <h1>Kweet</h1>
-        <p>{message}</p>
-        <form onSubmit={this.handleMessage}>
-          <p>
-            <TextArea
-              rows={4}
-              type="text"
-              placeholder="Your Kweet"
-              message="message"
-              onChange={this.handleInput}
-            />
-          </p>
-          <Button icon="edit">Kweet</Button>
-        </form>
-      </div>
-    );
-  }
+    handleClick = e => {
+        e.preventDefault();
+        this.props.postMessage(this.state);
+        this.setState({ text: "" });
+    };
+
+    handleChange = e => {
+        this.setState({ [e.target.name]: e.target.value });
+    };
+
+
+
+
+    render() {
+        const { loading, error } = this.props;
+        return (
+            <div className="field">
+                <h1>Kweet</h1>
+                <form onSubmit={this.handleClick}>
+                    <p>
+                        <TextArea
+                            autoFocus
+                            rows={4}
+                            type="text"
+                            name="text"
+                            placeholder="Your Kweet"
+                            onChange={this.handleChange}
+                            value={this.state.text}
+                        />
+                    </p>
+                    <Button icon="edit" htmlType="submit">Kweet</Button>
+                </form>
+                {loading && <Spinner name="circle" color="blue" />}
+                {error && <p style={{ color: "red" }}>{error.message}</p>}
+            </div>
+        );
+    }
 }
 
-export default CreateNewMessage;
+// export default withAsyncAction("messages", "postMessage")(CreateNewMessage);
+
+const mapStateToProps = state => {
+    return {
+        messages: state.messages
+    }
+}
+
+
+export default connect(mapStateToProps, {postMessage})(CreateNewMessage)

@@ -3,42 +3,34 @@ import { Card, Avatar } from 'antd';
 import 'antd/dist/antd.css';
 import "./Message.css";
 import moment from 'moment';
+import { withAsyncAction } from "../HOCs";
+
 
 const { Meta } = Card;
 
 class Message extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            items: [],
-            isLoaded: false,
-        }
+    state = {
+        items: [],
+        isLoaded: false,
     }
 
-    componentDidMount() {
 
-        fetch('https://kwitter-api.herokuapp.com/messages?limit=35&offset=0')
-            .then(res => res.json())
-            .then(json => {
-                this.setState({
-                    isLoaded: true,
-                    items: json.messages,
-                })
-            });
+    componentDidMount() {
+        this.props.getUserMessages(this.props.username)
     }
 
 
     render() {
-
-        var { isLoaded, items } = this.state;
-        if (!isLoaded) {
+        
+        if (this.props.result === null) {
             return <div>Loading...</div>;
         }
-
-        else {
+        const getMessages = this.props.result.messages
+        
 
             return (
+                
                 <div className='Message'>
                     <h3>Latest Kweets</h3>
                     {/* <Card>
@@ -51,9 +43,9 @@ class Message extends Component {
                         />
                     ))}
                     </Card> */}
-                      
+
                     <div>
-                        {items.map(item => (
+                        {getMessages.map(item => (
                             <Card key={item.id} class="userpost">
                                 <div class="postinfo">
                                     <Meta key={item.id}
@@ -64,13 +56,13 @@ class Message extends Component {
                                     <div class="timestamp">{moment(item.createdAt).startOf('hour').fromNow()}</div>
                                 </div>
                             </Card>
-                        ))}  
+                        ))}
                     </div>
 
-            </div>
+                </div>
             )
         }
     }
-}
 
-export default Message;
+
+export default withAsyncAction("messages", "getUserMessages") (Message);
