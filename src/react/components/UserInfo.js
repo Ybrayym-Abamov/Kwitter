@@ -5,6 +5,7 @@ import "antd/dist/antd.css";
 // import { Link } from ".";
 // import "./UserInfoBlock.css";
 // import { userIsAuthenticated } from "../HOCs";
+import { withAsyncAction } from "../HOCs";
 
 const { Meta } = Card;
 
@@ -18,25 +19,25 @@ class UserInfo extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`https://kwitter-api.herokuapp.com/users/${this.props.username}`)
-      .then(res => res.json())
-      .then(json => {
-        this.setState({
-          isLoaded: true,
-          username: JSON.parse(localStorage.login).result.username
-        });
-      });
+    const {username}=JSON.parse(localStorage.login).result;
+    this.props.getUserPicture(username); 
+    this.setState({
+      isLoaded: true,
+      user:this.props.user,
+      username: username
+    });
   }
 
   render() {
     var { isLoaded } = this.state;
+    const image=this.props.result || 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png';
     if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
       return (
         <Card>
           <Meta
-            avatar={ <Avatar size={64} src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />} 
+            avatar={ <Avatar size={64} src={image} />} 
             //we'll need to make this link to whatever icon the user uploads
             title={this.state.username} 
             // we'll need to make this show the name for the user account
@@ -47,4 +48,5 @@ class UserInfo extends React.Component {
   }
 }
     
-export default UserInfo;
+//export default UserInfo;
+export default withAsyncAction("users", "getUserPicture") (UserInfo);
