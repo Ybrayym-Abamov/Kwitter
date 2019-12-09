@@ -1,5 +1,5 @@
 import React from "react";
-import { MessageFeed, TopMenu, Sidebar } from "../components";
+import { Message, TopMenu, Sidebar } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 import "./Style.css";
 
@@ -13,7 +13,7 @@ class LiveFeed extends React.Component {
         <div className="col2">
           <TopMenu isAuthenticated={this.props.isAuthenticated} />
           <div className="content">
-            <MessageFeed />
+            <Message />
           </div>
         </div>
       </div>
