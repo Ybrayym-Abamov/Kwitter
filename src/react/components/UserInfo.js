@@ -1,10 +1,6 @@
 import React from "react";
 import { Card, Avatar } from "antd";
 import "antd/dist/antd.css";
-// import { UserDescription } from "."
-// import { Link } from ".";
-// import "./UserInfoBlock.css";
-// import { userIsAuthenticated } from "../HOCs";
 
 const { Meta } = Card;
 

@@ -6,13 +6,13 @@ import "./Style.css";
 class LiveFeed extends React.Component {
   render() {
     return (
-      <div class="maincontent">
-        <div class="col1">
+      <div className="maincontent">
+        <div className="col1">
           <Sidebar />
         </div>
-        <div class="col2">
+        <div className="col2">
           <TopMenu isAuthenticated={this.props.isAuthenticated} />
-          <div class="content">
+          <div className="content">
             <MessageFeed />
           </div>
         </div>

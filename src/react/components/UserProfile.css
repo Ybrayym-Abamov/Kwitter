@@ -1,0 +1,9 @@
+#accountbuttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.ant-btn {
+    margin: 0 3px;
+
+}

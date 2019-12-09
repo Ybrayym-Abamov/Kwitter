@@ -17,7 +17,12 @@ class Message extends Component {
 
 
     componentDidMount() {
-        this.props.getUserMessages(this.props.username)
+        this.props.getUserMessages(this.props.username);
+        this.messagePollingID = setInterval(this.props.getUserMessages, 5000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.messagePollingID)
     }
 
 
@@ -33,27 +38,16 @@ class Message extends Component {
                 
                 <div className='Message'>
                     <h3>Latest Kweets</h3>
-                    {/* <Card>
-                    {items.map(item => (
-                        <Meta key={item.id}
-                        avatar={<Avatar size={64} src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />} //we'll need to make this link to whatever icon the user uploads
-                        title={item.username} 
-                        {item.text}
-                        {moment(item.createdAt).startOf('hour').fromNow()}
-                        />
-                    ))}
-                    </Card> */}
-
                     <div>
                         {getMessages.map(item => (
-                            <Card key={item.id} class="userpost">
-                                <div class="postinfo">
+                            <Card key={item.id} className="userpost">
+                                <div className="postinfo">
                                     <Meta key={item.id}
                                         avatar={<Avatar size={64} src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />} //we'll need to make this link to whatever icon the user uploads
                                         title={item.username}
                                         description={item.text}
                                     />
-                                    <div class="timestamp">{moment(item.createdAt).startOf('hour').fromNow()}</div>
+                                    <div className="timestamp">{moment(item.createdAt).startOf('minutes').fromNow()}</div>
                                 </div>
                             </Card>
                         ))}

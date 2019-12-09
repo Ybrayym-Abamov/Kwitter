@@ -6,13 +6,13 @@ import "./Style.css";
 class Settings extends React.Component {
   render() {
     return (
-      <div class="maincontent">
-        <div class="col1">
+      <div className="maincontent">
+        <div className="col1">
           <Sidebar />
         </div>
-        <div class="col2">
+        <div className="col2">
             <TopMenu isAuthenticated={this.props.isAuthenticated} />
-          <div class="content">
+          <div className="content">
             I think this page will be deleted in favor of 'updateprofile.js'
           </div>
         </div>
