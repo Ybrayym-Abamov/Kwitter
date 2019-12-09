@@ -6,7 +6,7 @@ import "./Style.css";
 class Register extends React.Component {
   render() {
     return (
-      <div class="form">
+      <div className="form">
         <h2>Register your new account</h2>
         <RegisterForm />
         <h4>

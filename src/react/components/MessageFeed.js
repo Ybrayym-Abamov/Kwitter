@@ -3,6 +3,9 @@ import { Message } from ".";
 // import "./MessageFeed.css";
 
 class MessageFeed extends React.Component {
+      // componentDidMount {
+      //       this.messagePollingID = setInterval()
+      // }
     render() {
         return (
         <>

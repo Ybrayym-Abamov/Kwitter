@@ -3,7 +3,7 @@ import { withAsyncAction } from "../HOCs";
 /*import { UserInfo, UserDescription, DeleteUserButton } from ".";*/
 // import { Link } from "../components";
 // import pages from "../pages";
-// import { Card, Button } from "antd";
+import { Button} from "antd";
 import "antd/dist/antd.css";
 
 // import { Link } from ".";
@@ -19,7 +19,8 @@ class DeleteUserButton extends React.Component {
     }
   };
   render() {
-    return <button onClick={this.handleDeleteUser}>Delete your account</button>;
+    return <Button type="danger" key="delete" onClick={this.handleDeleteUser}>                Delete your account
+    </Button>;
   }
 }
 

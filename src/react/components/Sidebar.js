@@ -7,8 +7,8 @@ import logo from "../../images/kwitterLogo.png";
 class Sidebar extends React.Component {
     render() {
         return (
-           <div class="sidebar">
-              <img class="logo" src={logo} height="150px" width="150px" alt="logo" />
+           <div className="sidebar">
+              <img className="logo" src={logo} height="150px" width="150px" alt="logo" />
           <h2>A place where you can kwit the urth</h2>
           <hr />
             <UserInfoBlock />
