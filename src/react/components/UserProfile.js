@@ -1,14 +1,16 @@
 import React from "react";
 import { UserInfo, UserDescription, DeleteUserButton, UpdateProfile } from ".";
+// import pages from "../pages";
 import { Card } from 'antd';
 import 'antd/dist/antd.css';
 import { withAsyncAction } from "../HOCs";
 
 class UserProfile extends React.Component {
+
   state = {
     user: {},
     isLoaded: false
-  };  
+  };
 
   componentDidMount() {
     this.props.getUser();       

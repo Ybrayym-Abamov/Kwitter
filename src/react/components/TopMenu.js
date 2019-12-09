@@ -14,7 +14,7 @@ class TopMenu extends React.Component {
   handleClick = e => {
     console.log("click ", e);
     this.setState({
-      current: e.key
+      current: e.key,
     });
   };
 
@@ -46,7 +46,7 @@ class TopMenu extends React.Component {
               My Profile
               </Link>
           </Menu.Item>
-
+          
           <Menu.Item key="logout">
             {this.props.isAuthenticated && <LogOut />}
           </Menu.Item>
