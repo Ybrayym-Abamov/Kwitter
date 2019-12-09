@@ -22,15 +22,19 @@ h1, h3 {
     color: #1890ff;
 }
 h1 {
-    margin: 3px 0 0 0;
+    margin: 10px 0 0 0;
     font-size: 30px;
 }
 h2 {
+    padding-top: 10px;
     margin: 3px 0 0 0;
     font-size: 30px;
     font-family: 'Bebas Neue', cursive;
     color: #1890ff;
     text-indent: 8px;
+}
+h3 {
+    font-size: 18px;
 }
 
 .content {
@@ -89,4 +93,8 @@ h2 {
 .fulldiv {
     background: linear-gradient(to right, rgb(230, 230, 230), #6eb8fe, rgb(230, 230, 230));
     padding: 1px;
+}
+
+.header {
+    padding-top: 15px;
 }

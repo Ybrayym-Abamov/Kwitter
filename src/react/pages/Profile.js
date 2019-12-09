@@ -12,10 +12,12 @@ class Profile extends React.Component {
         </div>
         <div className="col2">
           <TopMenu isAuthenticated={this.props.isAuthenticated} />
+          <h1 className="header">Profile & Kweets</h1>
+          <div className="fulldiv"/>
           <div className="content">
             <UserProfile />
           </div> 
-            <div className="fulldiv"/>
+          <div className="fulldiv"/>
           <div className="content">
           <MessageFeed />
         </div>

@@ -37,7 +37,6 @@ class Message extends Component {
             return (
                 
                 <div className='Message'>
-                    <h1>Latest Kweets</h1>
                     <div>
                         {getMessages.map(item => (
                             <Card bordered={false} key={item.id} className="userpost">

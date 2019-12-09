@@ -12,6 +12,8 @@ class Users extends React.Component {
         </div>
         <div className="col2">
             <TopMenu isAuthenticated={this.props.isAuthenticated} />
+          <h1 className="header">The Masses</h1>
+          <div className="fulldiv"/>
           <div className="content">
             <UserList />
           </div>
