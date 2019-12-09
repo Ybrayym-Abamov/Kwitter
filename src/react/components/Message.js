@@ -17,8 +17,12 @@ class Message extends Component {
 
 
     componentDidMount() {
-        let messagePollingID = this.props.getUserMessages(this.props.username);
-        setInterval((messagePollingID) => {console.log("polling")}, 5000);
+        this.props.getUserMessages(this.props.username);
+        this.messagePollingID = setInterval(this.props.getUserMessages, 5000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.messagePollingID)
     }
 
 
