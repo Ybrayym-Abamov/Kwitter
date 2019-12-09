@@ -30,7 +30,7 @@ class UserInfo extends React.Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <Card>
+        <Card bordered={false}>
           <Meta
             avatar={ <Avatar size={64} src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />} 
             //we'll need to make this link to whatever icon the user uploads

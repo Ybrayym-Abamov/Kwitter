@@ -1,11 +1,7 @@
 import React from "react";
 import { UserInfo, UserDescription, DeleteUserButton, UpdateProfile } from ".";
-// import pages from "../pages";
 import { Card} from 'antd';
 import 'antd/dist/antd.css';
-
-
-// import { Link } from ".";
 import "./UserProfile.css";
 
 class UserProfile extends React.Component {
@@ -51,19 +47,13 @@ class UserProfile extends React.Component {
         return (
         <>
             <UserInfo />
-          <Card>
+          <Card bordered={false}>
             <UserDescription />
             <p>message counter code here  |  registration date code here</p>
-            {this.getUpdateProfileDom()}
-            {/* <div id="accountbuttons">
-              <Button type="primary" block>
-              <Link to={pages.UpdateProfile.path}>
-              <Icon type="edit" />
-                Edit Profile  
-                </Link>
-              </Button> */}
+            <div className="accountbuttons">
+              {this.getUpdateProfileDom()}
               <DeleteUserButton />
-            {/* </div> */}
+            </div>
           </Card>
         </>
         );

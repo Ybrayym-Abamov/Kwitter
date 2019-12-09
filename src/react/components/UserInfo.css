@@ -3,6 +3,11 @@
     align-items: center;
 }
 
+.ant-card-body {
+    border: 0;
+
+}
+
 .editbutton {
     font-style: italic;
     font-size: 8pt;
