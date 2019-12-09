@@ -1,5 +1,5 @@
 import React from "react";
-import { MessageFeed, UserProfile, TopMenu, Sidebar } from "../components";
+import { MessageFeed, UserProfile, TopMenu, Sidebar, BackToTop } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 import "./Style.css";
 
@@ -21,6 +21,7 @@ class Profile extends React.Component {
           <div className="content">
           <MessageFeed />
         </div>
+        <BackToTop />
         </div>
       </div>
       

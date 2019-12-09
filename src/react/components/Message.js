@@ -51,7 +51,7 @@ class Message extends Component {
                             </Card>
                         ))}
                     </div>
-                <h3>there are no more messages</h3>
+                <h3>looks like you ran out of Kweets</h3>
                 </div>
             )
         }

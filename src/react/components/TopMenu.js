@@ -26,7 +26,7 @@ class TopMenu extends React.Component {
           className="topmenu"
           style={{ width: 564 }}
           onClick={this.handleClick}
-          selectedKeys={[this.state.current]}
+          defaultSelectedKeys={[this.state.current]}
           mode="horizontal"
         >
           <Menu.Item key="home">

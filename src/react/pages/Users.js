@@ -1,5 +1,5 @@
 import React from "react";
-import { UserList, TopMenu, Sidebar } from "../components";
+import { UserList, TopMenu, Sidebar, BackToTop } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 import "./Style.css";
 
@@ -17,6 +17,7 @@ class Users extends React.Component {
           <div className="content">
             <UserList />
           </div>
+          <BackToTop />
         </div>
       </div>
       
