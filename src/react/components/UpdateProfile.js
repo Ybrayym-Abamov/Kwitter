@@ -1,20 +1,21 @@
 import React from "react";
-import { withAsyncAction } from "../HOCs";
-import "./UpdateProfile.css";
 import { Modal, Button, Icon, Input, Form } from "antd";
+import { updateUserThenReloadUser as updateUser } from "../../redux/actionCreators/users";
+import "./UpdateProfile.css";
 import "antd/dist/antd.css";
+import {connect} from "react-redux"
 
 class UpdateProfile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '', about: '', displayName: '', password: ''
+      visible:props.visible,username: '', about: '', displayName: '', password: ''
     };
   }
 
   componentDidMount() {
-    const { username, displayName, about } = this.props.user;
-    this.setState({ username, displayName, about })
+    const { username, displayName, about,password } = this.props.user;
+    this.setState({ username, displayName, about,password });
   }
 
   showModal = () => {
@@ -25,16 +26,6 @@ class UpdateProfile extends React.Component {
 
   handleUpdate = () => {
     this.props.updateUser({ password: this.state.password, displayName: this.state.displayName, about: this.state.about });
-    // this.setState({
-    //   ModalText: 'The modal will be closed after two seconds',
-    //   confirmLoading: true,
-    // });
-    // setTimeout(() => {
-    //   this.setState({
-    //     visible: false,
-    //     confirmLoading: false,
-    //   });
-    // }, 2000);
   };
 
   handleChange = e => {
@@ -42,7 +33,6 @@ class UpdateProfile extends React.Component {
   };
 
   handleCancel = () => {
-    console.log('Clicked cancel button');
     this.setState({
       visible: false,
     });
@@ -102,4 +92,13 @@ class UpdateProfile extends React.Component {
   }
 }
 
-export default withAsyncAction("users", "updateUser")(UpdateProfile);
+const mapStateToProps = state => {
+  return {
+    users: state.users
+  }
+}
+
+
+export default connect(mapStateToProps, {updateUser})(UpdateProfile)
+
+//export default withAsyncAction("users", updateUserThenReloadUser)(UpdateProfile);

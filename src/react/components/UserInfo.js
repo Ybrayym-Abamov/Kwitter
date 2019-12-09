@@ -18,14 +18,12 @@ class UserInfo extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`https://kwitter-api.herokuapp.com/users/${this.props.username}`)
-      .then(res => res.json())
-      .then(json => {
-        this.setState({
-          isLoaded: true,
-          username: JSON.parse(localStorage.login).result.username
-        });
-      });
+    debugger;
+    this.setState({
+      isLoaded: true,
+      user:this.props.user,
+      username: JSON.parse(localStorage.login).result.username
+    });
   }
 
   render() {

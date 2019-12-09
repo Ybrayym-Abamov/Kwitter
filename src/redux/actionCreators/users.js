@@ -1,5 +1,5 @@
 import { domain, jsonHeaders, handleJsonResponse } from "./constants";
-import { POSTUSER, DELETEUSER, UPDATEUSER, LOGOUT } from "../actionTypes";
+import { POSTUSER, DELETEUSER, UPDATEUSER, LOGOUT,GETUSER } from "../actionTypes";
 import { login } from "./auth";
 
 const url = domain + "/users";
@@ -83,3 +83,28 @@ export const updateUser = updateData => (dispatch, getState) => {
       return Promise.reject(dispatch({ type: UPDATEUSER.FAIL, payload: err }));
     });
 };
+
+export const getUser = (userName) => (dispatch, getState) => {
+  dispatch({ type: GETUSER.START });
+  console.log(userName)
+  const username = userName || getState().auth.login.result.username;
+
+  return fetch(url + "/" + username, {
+    method: "GET",
+    headers: { ...jsonHeaders }
+  })
+    .then(handleJsonResponse)
+    .then(result => {
+      return dispatch({
+        type: GETUSER.SUCCESS,
+        payload: result
+      });
+    })
+    .catch(err => {
+      return Promise.reject(dispatch({ type: GETUSER.FAIL, payload: err }));
+    });
+};
+
+export const updateUserThenReloadUser = userData => dispatch => {
+  return dispatch(updateUser(userData)).then(()=>dispatch(getUser()))
+}

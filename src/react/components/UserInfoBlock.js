@@ -5,14 +5,22 @@ import "./UserInfo.css";
 // import { userIsAuthenticated } from "../HOCs";
 import { Card} from 'antd';
 import 'antd/dist/antd.css';
+import { withAsyncAction } from "../HOCs";
 // import './CreateNewMessage';
 
 class UserInfoBlock extends React.Component {
-
+    componentDidMount() {
+        this.props.getUser(JSON.parse(localStorage.login).result.username);    
+      }
     render() {
+        if (this.props.result === null) {
+            return <div>Loading...</div>;
+        }
+        const userData = this.props.result.user;
+        
         return (
         <div id="userinfoblock">
-            <UserInfo username={JSON.parse(localStorage.login).result.username}/>
+            <UserInfo user={userData}/>
             <Card>
                 <UserDescription /> 
                 <p/>
@@ -25,4 +33,5 @@ class UserInfoBlock extends React.Component {
 
 }
 
-export default UserInfoBlock;
+export default withAsyncAction("users", "getUser") (UserInfoBlock);
+// export default UserInfoBlock;

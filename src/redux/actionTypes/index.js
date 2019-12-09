@@ -14,6 +14,7 @@ export const LOGOUT = createActionTypes("LOGOUT");
 export const POSTUSER = createActionTypes("POSTUSER");
 export const UPDATEUSER = createActionTypes("UPDATEUSER");
 export const DELETEUSER = createActionTypes("DELETEUSER");
+export const GETUSER = createActionTypes("GETUSER");
 //messages
 export const POSTMESSAGE = createActionTypes("POSTMESSAGE");
 export const GETUSERMESSAGES = createActionTypes("GETUSERMESSAGES");

@@ -2,10 +2,7 @@ import React from "react";
 import { UserInfo, UserDescription, DeleteUserButton, UpdateProfile } from ".";
 import { Card } from 'antd';
 import 'antd/dist/antd.css';
-
-
-// import { Link } from ".";
-// import "./UserProfile.css";
+import { withAsyncAction } from "../HOCs";
 
 class UserProfile extends React.Component {
   state = {
@@ -14,50 +11,28 @@ class UserProfile extends React.Component {
   };  
 
   componentDidMount() {
-    const userName = JSON.parse(localStorage.login).result.username;
-    const url = `https://kwitter-api.herokuapp.com/users/${userName}`;
-    const jsonHeaders = {
-      "Content-Type": "application/json",
-      Accept: "application/json"
-    };
-
-    fetch(url, {
-      method: "GET",
-      headers: jsonHeaders
-    })
-      .then(res => res.json())
-      .then(json => {
-        console.log(json)
-        this.setState({
-          isLoaded: true,
-          user: json.user
-        });
-      });
-  }
-
-  getUpdateProfileDom(){
-    const { isLoaded,user } = this.state;
-    if (isLoaded) {
-      return <UpdateProfile user={user}/>
-    }
-    else{
-      return '';
-    }
+    this.props.getUser(JSON.parse(localStorage.login).result.username);    
   }
 
   render() {
-    
+    debugger;
+    if (this.props.result === null) {
+      return <div>Loading...</div>;
+  }
+  const userData = this.props.result.user;
+
     return (
       <>
-        <UserInfo />
+        <UserInfo user={userData}/>
         <Card>
-          <UserDescription />
+          <UserDescription user={userData}/>
           <p>message counter code here  |  registration date code here</p>
-          {this.getUpdateProfileDom()}
+          <UpdateProfile user={userData} visible={false}/>
           <DeleteUserButton />
         </Card>
       </>
     );
   }
 }
-export default UserProfile;
+
+export default withAsyncAction("users", "getUser") (UserProfile);
