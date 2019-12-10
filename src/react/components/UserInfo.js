@@ -14,17 +14,20 @@ class UserInfo extends React.Component {
     super(props);
     this.state = {
       user: "",
-      isLoaded: false
+      isLoaded: false,
+      // displayName: ""
     };
   }
 
   componentDidMount() {
     const {username}=JSON.parse(localStorage.login).result;
+    console.log(JSON.parse(localStorage.login).result);
     this.props.getUserPicture(username); 
     this.setState({
       isLoaded: true,
       user:this.props.user,
-      username: username
+      username: username,
+      // displayName: displayName
     });
   }
 
