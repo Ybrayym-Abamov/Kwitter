@@ -14,6 +14,8 @@ export { default as Message } from "./Message";
 export { default as MessageFeed } from "./MessageFeed";
 export { default as RegisterForm } from "./RegisterForm";
 export { default as DeleteUserButton } from "./DeleteUserButton";
+export { default as BackToTop } from "./BackToTop";
+
 // components from other packages
 export { Switch, Route, Link } from "react-router-dom";
 export { default as Spinner } from "react-spinkit";

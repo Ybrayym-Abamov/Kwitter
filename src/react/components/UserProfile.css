@@ -1,9 +1,19 @@
-#accountbuttons {
+.accountbuttons {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 }
-.ant-btn {
-    margin: 0 3px;
 
+.ant-btn {
+    margin: 5px 5px 0 5px;
+}
+
+.ant-btn-primary {
+    font-weight: 800;
+}
+
+.ant-btn-danger {
+    background-color: white;
+    color: #ff4d4f;
+    font-weight: 700;
 }

@@ -109,9 +109,9 @@ class UpdateProfile extends React.Component {
             <Form.Item>
               <label htmlFor="about">Edit User Bio</label>
               <TextArea
-                placeholder="Input user bio"
+                placeholder="Tell us about yourself in 500 characters"
                 rows={4}
-                maxLength={255}
+                maxLength={500}
                 value={this.state.about}
                 name="about"
                 onChange={this.handleChange}

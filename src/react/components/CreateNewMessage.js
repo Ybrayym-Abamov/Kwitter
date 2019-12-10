@@ -32,7 +32,6 @@ class CreateNewMessage extends Component {
         const { loading, error } = this.props;
         return (
             <div className="field">
-                <h1>Kweet</h1>
                 <form onSubmit={this.handleClick}>
                     <p>
                         <TextArea
@@ -40,7 +39,7 @@ class CreateNewMessage extends Component {
                             rows={4}
                             type="text"
                             name="text"
-                            placeholder="Your Kweet"
+                            placeholder="Kweeeeeeet"
                             onChange={this.handleChange}
                             value={this.state.text}
                         />

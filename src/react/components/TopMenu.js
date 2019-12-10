@@ -11,19 +11,22 @@ class TopMenu extends React.Component {
     current: "home",
   };
 
-  handleClick = e => {
-    console.log("click ", e);
+  handleClick = event => {
+    console.log("click ", event);
     this.setState({
-      current: e.key,
+      current: event.key,
     });
   };
 
   render() {
     return (
-      <div id="menu">
-        <Menu
+      // <div id="menu">
+        <Menu 
+          bordered={false}
+          className="topmenu"
+          style={{ width: 564 }}
           onClick={this.handleClick}
-          selectedKeys={[this.state.current]}
+          defaultSelectedKeys={[this.state.current]}
           mode="horizontal"
         >
           <Menu.Item key="home">
@@ -51,7 +54,7 @@ class TopMenu extends React.Component {
             {this.props.isAuthenticated && <LogOut />}
           </Menu.Item>
         </Menu>
-      </div>
+      // </div>
     );
   }
 }
