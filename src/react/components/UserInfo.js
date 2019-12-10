@@ -1,10 +1,6 @@
 import React from "react";
 import { Card, Avatar } from "antd";
 import "antd/dist/antd.css";
-// import { UserDescription } from "."
-// import { Link } from ".";
-// import "./UserInfoBlock.css";
-// import { userIsAuthenticated } from "../HOCs";
 import { withAsyncAction } from "../HOCs";
 
 const { Meta } = Card;
@@ -14,20 +10,17 @@ class UserInfo extends React.Component {
     super(props);
     this.state = {
       user: "",
-      isLoaded: false,
-      // displayName: ""
+      isLoaded: false
     };
   }
 
   componentDidMount() {
     const {username}=JSON.parse(localStorage.login).result;
-    console.log(JSON.parse(localStorage.login).result);
     this.props.getUserPicture(username); 
     this.setState({
       isLoaded: true,
       user:this.props.user,
-      username: username,
-      // displayName: displayName
+      username: username
     });
   }
 

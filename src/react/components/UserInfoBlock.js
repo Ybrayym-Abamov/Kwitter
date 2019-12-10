@@ -28,6 +28,10 @@ class UserInfoBlock extends React.Component {
                 <p>This will link to the user's entered profile information. if it is longer than desired, it will be shortened with an affordance to view the full profile on the user's full profile/feed page</p> */}
 
             <UserInfo user={userData}/>
+            <Card>
+               display name: {userData.displayName}
+            </Card>
+
             <Card bordered={false}>
                 <UserDescription about={userData.about}/> 
                 {/* <p/> */}
