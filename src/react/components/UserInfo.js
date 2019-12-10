@@ -10,39 +10,35 @@ class UserInfo extends React.Component {
     super(props);
     this.state = {
       user: "",
-      isLoaded: false
+      isLoaded: false,
+      displayName: ""
     };
   }
 
   componentDidMount() {
-    const {username}=JSON.parse(localStorage.login).result;
-    this.props.getUserPicture(username); 
-    this.setState({
-      isLoaded: true,
-      user:this.props.user,
-      username: username
-    });
+    this.props.getUser();
   }
 
   render() {
-    var { isLoaded } = this.state;
-    const image=this.props.result || 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png';
-    if (!isLoaded) {
-      return <div>Loading...</div>;
-    } else {
+    if (!this.props.result) {
+        return <div>Loading...</div>;
+    }
+    const userData = this.props.result.user;
+    const image = this.props.result || 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png';
+
       return (
         <Card bordered={false}>
           <Meta
             avatar={ <Avatar size={64} src={image} />} 
             //we'll need to make this link to whatever icon the user uploads
-            title={this.state.username} 
+            title={userData.displayName} 
             // we'll need to make this show the name for the user account
           />
         </Card>
       );
     }
   }
-}
+
     
 //export default UserInfo;
-export default withAsyncAction("users", "getUserPicture") (UserInfo);
+export default withAsyncAction("users", "getUser",  "getUserPicture") (UserInfo);
