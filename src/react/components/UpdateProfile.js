@@ -142,7 +142,7 @@ class UpdateProfile extends React.Component {
             </Form.Item>
             <div>
               <Avatar size={64} src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />
-              <span>Edit Avatar</span>
+              <span>Edit Avatar (upload gif, jpeg, png & size below 200kb)</span>
               <div>
                 <Upload {...this.uploadProps} accept=".gif,.jpeg,.png" size="100">
                   <Button>

@@ -21,14 +21,14 @@ class UserProfile extends React.Component {
       return <div>Loading...</div>;
   }
   const userData = this.props.result.user;
-
+const date = new Date(userData.createdAt).toDateString();
     return (
       <>
         <UserInfo user={userData}/>
         <Card bordered={false}>
           <UserDescription user={userData}/>
           <UserDescription about={userData.about}/> 
-          <p>message counter code here  |  registration date code here</p>
+          <p>message counter code here  | {date}</p>
           <div className="accountbuttons">
             <UpdateProfile user={userData} visible={false}/>
             <DeleteUserButton />
