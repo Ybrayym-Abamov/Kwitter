@@ -30,7 +30,8 @@ class UserInfo extends React.Component {
 
   render() {
     var { isLoaded } = this.state;
-    const image=this.props.result || 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png';
+    //const image=this.props.result || 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png';
+    const image=  'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png';
     if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
