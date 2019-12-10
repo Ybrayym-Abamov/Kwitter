@@ -1,12 +1,9 @@
 import React from "react";
 import { UserDescription, UserInfo } from "."
-// import { Link } from ".";
 import "./UserInfo.css";
-// import { userIsAuthenticated } from "../HOCs";
 import { Card} from 'antd';
 import 'antd/dist/antd.css';
 import { withAsyncAction } from "../HOCs";
-// import './CreateNewMessage';
 
 class UserInfoBlock extends React.Component {
     componentDidMount() {

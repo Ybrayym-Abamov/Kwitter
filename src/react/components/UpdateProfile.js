@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal, Button, Icon, Input, Form, Avatar,Upload,message } from "antd";
 import { connect } from "react-redux"
-import { updateUserThenReloadUser as updateUser,getUserPicture } from "../../redux/actionCreators/users";
+import { updateUserThenReloadUser as updateUser,getUserPicture,getUser } from "../../redux/actionCreators/users";
 import "./UpdateProfile.css";
 import "antd/dist/antd.css";
 
@@ -27,7 +27,30 @@ class UpdateProfile extends React.Component {
   };
 
   handleUpdate = () => {
-    this.props.updateUser({ password: this.state.password, displayName: this.state.displayName, about: this.state.about });
+    const { username, token } = JSON.parse(localStorage.login).result;
+    const jsonHeaders = {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    };
+  return fetch("https://kwitter-api.herokuapp.com/users/" +  username, {
+    method: "PATCH",
+    headers: { Authorization: "Bearer " + token, ...jsonHeaders},
+    body: JSON.stringify({ password: this.state.password, displayName: this.state.displayName, about: this.state.about })
+  })
+    .then(res=>{
+      if (res.ok) {
+        return res.json();
+      }
+      return res.json().then(result => {
+        throw result;
+      });
+    })
+    .then(result => {
+      this.setState({
+        visible: false,
+      });
+      this.props.getUser();
+    })
   };
 
   handleChange = e => {
@@ -141,4 +164,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, { updateUser,getUserPicture })(UpdateProfile);
+export default connect(mapStateToProps, { updateUser,getUserPicture,getUser })(UpdateProfile);
