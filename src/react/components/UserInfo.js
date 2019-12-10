@@ -23,7 +23,7 @@ class UserInfo extends React.Component {
     this.props.getUserPicture(username); 
     this.setState({
       isLoaded: true,
-      user:this.props.user,
+      //user:this.props.user,
       username: username
     });
   }
@@ -39,7 +39,7 @@ class UserInfo extends React.Component {
           <Meta
             avatar={ <Avatar size={64} src={image} />} 
             //we'll need to make this link to whatever icon the user uploads
-            title={this.state.username} 
+            title={`${this.props.user.displayName} (${this.state.username})`} 
             // we'll need to make this show the name for the user account
           />
         </Card>
