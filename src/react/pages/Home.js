@@ -8,7 +8,7 @@ class Home extends React.Component {
     return (
       <>
         <div className="form">
-          <h2>Your favorite microblogging platform</h2>
+          <h1>Your favorite microblogging platform</h1>
           <LoginForm />
           <h4>
             Don't have an account? <Link to="/register">Register Here</Link>
