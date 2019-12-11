@@ -1,9 +1,10 @@
 import React from "react";
 import { UserInfo, UserDescription, DeleteUserButton, UpdateProfile } from ".";
 import "./UserProfile.css";
-import { Card } from 'antd';
+import { Card, Divider } from 'antd';
 import 'antd/dist/antd.css';
 import { withAsyncAction } from "../HOCs";
+import moment from 'moment';
 
 class UserProfile extends React.Component {
 
@@ -21,17 +22,18 @@ class UserProfile extends React.Component {
       return <div>Loading...</div>;
   }
   const userData = this.props.result.user;
-const date = new Date(userData.createdAt).toDateString();
+const date = moment(userData.createdAt).subtract(10, 'days').calendar();
     return (
       <>
         <UserInfo user={userData}/>
         <Card bordered={false}>
           <UserDescription user={userData}/>
           <UserDescription about={userData.about}/> 
-          <p>message counter code here  | {date}</p>
+          <Divider />
+          <p className="subdata">Kwitting the Urth since {date}</p>
           <div className="accountbuttons">
-            <UpdateProfile user={userData} visible={false}/>
-            <DeleteUserButton />
+            <div className="profilebtn"><UpdateProfile user={userData} visible={false}/></div>
+            <div  className="profilebtn"><DeleteUserButton /></div>
           </div>
         </Card>
       </>

@@ -1,7 +1,7 @@
 import React from "react";
 // // import { UserInfoBlock } from ".";
 // // import { Link } from ".";
-import { Card, Avatar } from 'antd';
+import { Card, Avatar, Divider } from 'antd';
 import 'antd/dist/antd.css';
 import moment from 'moment';
 import { withAsyncAction } from "../HOCs";
@@ -47,11 +47,13 @@ class UserList extends React.Component {
                   title={item.username}
                   description={item.about}
                 />
-                <div className="timestamp">{moment(item.createdAt).subtract(10, 'days').calendar()}</div>
+                <div className="timestamp">Kwitting the Urth since {moment(item.createdAt).subtract(10, 'days').calendar()}</div>
+                <Divider />
               </div>
             </Card>
           ))}
         </div>
+        <h3>That was all the masses that kwit the urth. there are no more to see.</h3>
       </div>
     );
   }
