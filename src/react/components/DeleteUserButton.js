@@ -19,8 +19,7 @@ class DeleteUserButton extends React.Component {
     }
   };
   render() {
-    return <Button type="danger" key="delete" onClick={this.handleDeleteUser}>                Delete your account
-    </Button>;
+    return <Button type="danger" key="delete" onClick={this.handleDeleteUser}>Delete Account</Button>;
   }
 }
 
