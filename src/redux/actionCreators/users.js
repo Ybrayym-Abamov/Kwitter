@@ -135,7 +135,7 @@ export const getUserPicture = (username) => (dispatch, getState) => {
 export const getUsers = () => (dispatch) => {
   dispatch({ type: GETUSERS.START });
   // const { users } = getState().auth.login.result;
-  // https://kwitter-api.herokuapp.com/users?limit=35&offset=0
+  // https://urth-kwitter.herokuapp.com/users?limit=35&offset=0
 
   return fetch(url + "?limit=35&offset=0", {
     method: "GET",
