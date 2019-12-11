@@ -4,7 +4,7 @@ import "antd/dist/antd.css";
 import "./CreateNewMessage.css";
 import { Spinner } from ".";
 import { postMessageThenReloadMessages as postMessage } from "../../redux/actionCreators/messages";
-import {connect} from "react-redux"
+import { connect } from "react-redux"
 
 
 const { TextArea } = Input;
@@ -53,7 +53,6 @@ class CreateNewMessage extends Component {
     }
 }
 
-// export default withAsyncAction("messages", "postMessage")(CreateNewMessage);
 
 const mapStateToProps = state => {
     return {
@@ -62,4 +61,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, {postMessage})(CreateNewMessage)
+export default connect(mapStateToProps, { postMessage })(CreateNewMessage)

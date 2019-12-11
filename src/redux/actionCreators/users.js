@@ -1,5 +1,5 @@
 import { domain, jsonHeaders, handleJsonResponse } from "./constants";
-import { POSTUSER, DELETEUSER, UPDATEUSER, LOGOUT,GETUSER,GETUSERPICTURE } from "../actionTypes";
+import { POSTUSER, DELETEUSER, UPDATEUSER, LOGOUT, GETUSER, GETUSERPICTURE, GETUSERS } from "../actionTypes";
 import { login } from "./auth";
 
 const url = domain + "/users";
@@ -64,7 +64,7 @@ export const deleteUser = () => (dispatch, getState) => {
 
 export const updateUser = updateData => (dispatch, getState) => {
   dispatch({ type: UPDATEUSER.START });
-  
+
   const { username, token } = getState().auth.login.result;
 
   return fetch(url + "/" + username, {
@@ -86,7 +86,7 @@ export const updateUser = updateData => (dispatch, getState) => {
 
 export const getUser = () => (dispatch, getState) => {
   dispatch({ type: GETUSER.START });
-  const {username} = getState().auth.login.result;
+  const { username } = getState().auth.login.result;
 
   return fetch(url + "/" + username, {
     method: "GET",
@@ -105,7 +105,7 @@ export const getUser = () => (dispatch, getState) => {
 };
 
 export const updateUserThenReloadUser = userData => dispatch => {
-  return dispatch(updateUser(userData)).then(()=>dispatch(getUser()))
+  return dispatch(updateUser(userData)).then(() => dispatch(getUser()))
 }
 
 export const getUserPicture = (username) => (dispatch, getState) => {
@@ -125,5 +125,30 @@ export const getUserPicture = (username) => (dispatch, getState) => {
     .catch(err => {
       // debugger;
       return Promise.reject(dispatch({ type: GETUSERPICTURE.FAIL, payload: err }));
+    });
+};
+
+
+
+
+
+export const getUsers = () => (dispatch) => {
+  dispatch({ type: GETUSERS.START });
+  // const { users } = getState().auth.login.result;
+  // https://kwitter-api.herokuapp.com/users?limit=35&offset=0
+
+  return fetch(url + "?limit=35&offset=0", {
+    method: "GET",
+    headers: { ...jsonHeaders }
+  })
+    .then(handleJsonResponse)
+    .then(result => {
+      return dispatch({
+        type: GETUSERS.SUCCESS,
+        payload: result
+      });
+    })
+    .catch(err => {
+      return Promise.reject(dispatch({ type: GETUSERS.FAIL, payload: err }));
     });
 };
