@@ -47,8 +47,8 @@ class Message extends Component {
                                         description={item.text}
                                     />
                                     <div className="timestamp">{moment(item.createdAt).startOf('minutes').fromNow()}</div>
-                                </div>
                                 <Divider />
+                                </div>
                             </Card>
                         ))}
                     </div>

@@ -48,6 +48,7 @@ class UserList extends React.Component {
                   description={item.about}
                 />
                 <div className="timestamp">Kwitting the Urth since {moment(item.createdAt).subtract(10, 'days').calendar()}</div>
+                <Divider />
               </div>
             </Card>
           ))}
