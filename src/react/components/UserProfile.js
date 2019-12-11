@@ -4,6 +4,7 @@ import "./UserProfile.css";
 import { Card, Divider } from 'antd';
 import 'antd/dist/antd.css';
 import { withAsyncAction } from "../HOCs";
+import moment from 'moment';
 
 class UserProfile extends React.Component {
 
@@ -21,7 +22,7 @@ class UserProfile extends React.Component {
       return <div>Loading...</div>;
   }
   const userData = this.props.result.user;
-const date = new Date(userData.createdAt).toDateString();
+const date = moment(userData.createdAt).subtract(10, 'days').calendar();
     return (
       <>
         <UserInfo user={userData}/>
