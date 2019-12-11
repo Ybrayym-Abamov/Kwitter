@@ -3,7 +3,13 @@ form {
   flex-direction: column;
 }
  
-Button {
-   /* display: flex; */
+.kweetbtn {
+   display: flex;
    align-self: flex-end;
+   margin: 0 0 10px 0;
 }
+
+/* Button .ant-btn .kweetbtn {
+  margin: 0;
+
+} */

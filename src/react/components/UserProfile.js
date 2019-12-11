@@ -29,10 +29,10 @@ const date = new Date(userData.createdAt).toDateString();
           <UserDescription user={userData}/>
           <UserDescription about={userData.about}/> 
           <Divider />
-          <p className="subdata">message counter code here  | Kwitting the Urth since {date}</p>
+          <p className="subdata">Kwitting the Urth since {date}</p>
           <div className="accountbuttons">
-            <UpdateProfile user={userData} visible={false}/>
-            <DeleteUserButton />
+            <div className="profilebtn"><UpdateProfile user={userData} visible={false}/></div>
+            <div  className="profilebtn"><DeleteUserButton /></div>
           </div>
         </Card>
       </>

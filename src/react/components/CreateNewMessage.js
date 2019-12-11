@@ -44,7 +44,7 @@ class CreateNewMessage extends Component {
                             value={this.state.text}
                         />
                     </p>
-                    <Button icon="edit" htmlType="submit">Kweet</Button>
+                    <Button icon="edit" htmlType="submit" className="kweetbtn">Kweet</Button>
                 </form>
                 {loading && <Spinner name="circle" color="blue" />}
                 {error && <p style={{ color: "red" }}>{error.message}</p>}
