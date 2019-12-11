@@ -4,7 +4,7 @@ import "antd/dist/antd.css";
 import "./CreateNewMessage.css";
 import { Spinner } from ".";
 import { postMessageThenReloadMessages as postMessage } from "../../redux/actionCreators/messages";
-import {connect} from "react-redux"
+import { connect } from "react-redux"
 
 
 const { TextArea } = Input;
@@ -32,7 +32,6 @@ class CreateNewMessage extends Component {
         const { loading, error } = this.props;
         return (
             <div className="field">
-                <h1>Kweet</h1>
                 <form onSubmit={this.handleClick}>
                     <p>
                         <TextArea
@@ -40,7 +39,7 @@ class CreateNewMessage extends Component {
                             rows={4}
                             type="text"
                             name="text"
-                            placeholder="Your Kweet"
+                            placeholder="Kweeeeeeet"
                             onChange={this.handleChange}
                             value={this.state.text}
                         />
@@ -54,7 +53,6 @@ class CreateNewMessage extends Component {
     }
 }
 
-// export default withAsyncAction("messages", "postMessage")(CreateNewMessage);
 
 const mapStateToProps = state => {
     return {
@@ -63,4 +61,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, {postMessage})(CreateNewMessage)
+export default connect(mapStateToProps, { postMessage })(CreateNewMessage)

@@ -3,7 +3,7 @@ import { withAsyncAction } from "../HOCs";
 /*import { UserInfo, UserDescription, DeleteUserButton } from ".";*/
 // import { Link } from "../components";
 // import pages from "../pages";
-import { Button} from "antd";
+import { Button } from "antd";
 import "antd/dist/antd.css";
 
 // import { Link } from ".";

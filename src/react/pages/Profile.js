@@ -1,5 +1,5 @@
 import React from "react";
-import { MessageFeed, UserProfile, TopMenu, Sidebar } from "../components";
+import { MessageFeed, UserProfile, TopMenu, Sidebar, BackToTop } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 import "./Style.css";
 
@@ -12,15 +12,16 @@ class Profile extends React.Component {
         </div>
         <div className="col2">
           <TopMenu isAuthenticated={this.props.isAuthenticated} />
+          <h1 className="header">Profile & Kweets</h1>
+          <div className="fulldiv"/>
           <div className="content">
-            <h3>this section is the full profile of a user</h3>
             <UserProfile />
-          </div>
-            <hr />
+          </div> 
+          <div className="fulldiv"/>
           <div className="content">
-          <h3>this section is the feed of all messages posted by this particular user</h3>
           <MessageFeed />
         </div>
+        <BackToTop />
         </div>
       </div>
       

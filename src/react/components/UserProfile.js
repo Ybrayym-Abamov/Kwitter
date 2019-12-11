@@ -1,6 +1,6 @@
 import React from "react";
 import { UserInfo, UserDescription, DeleteUserButton, UpdateProfile } from ".";
-// import pages from "../pages";
+import "./UserProfile.css";
 import { Card } from 'antd';
 import 'antd/dist/antd.css';
 import { withAsyncAction } from "../HOCs";
@@ -25,11 +25,14 @@ class UserProfile extends React.Component {
     return (
       <>
         <UserInfo user={userData}/>
-        <Card>
+        <Card bordered={false}>
           <UserDescription user={userData}/>
+          <UserDescription about={userData.about}/> 
           <p>message counter code here  |  registration date code here</p>
-          <UpdateProfile user={userData} visible={false}/>
-          <DeleteUserButton />
+          <div className="accountbuttons">
+            <UpdateProfile user={userData} visible={false}/>
+            <DeleteUserButton />
+          </div>
         </Card>
       </>
     );

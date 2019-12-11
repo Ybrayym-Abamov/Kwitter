@@ -16,6 +16,7 @@ export const UPDATEUSER = createActionTypes("UPDATEUSER");
 export const DELETEUSER = createActionTypes("DELETEUSER");
 export const GETUSER = createActionTypes("GETUSER");
 export const GETUSERPICTURE = createActionTypes("GETUSERPICTURE");
+export const GETUSERS = createActionTypes('GETUSERS')
 //messages
 export const POSTMESSAGE = createActionTypes("POSTMESSAGE");
 export const GETUSERMESSAGES = createActionTypes("GETUSERMESSAGES");

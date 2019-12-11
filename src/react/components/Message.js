@@ -37,10 +37,9 @@ class Message extends Component {
             return (
                 
                 <div className='Message'>
-                    <h3>Latest Kweets</h3>
                     <div>
                         {getMessages.map(item => (
-                            <Card key={item.id} className="userpost">
+                            <Card bordered={false} key={item.id} className="userpost">
                                 <div className="postinfo">
                                     <Meta key={item.id}
                                         avatar={<Avatar size={64} src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />} //we'll need to make this link to whatever icon the user uploads
@@ -52,7 +51,7 @@ class Message extends Component {
                             </Card>
                         ))}
                     </div>
-
+                <h3>looks like you ran out of Kweets</h3>
                 </div>
             )
         }
