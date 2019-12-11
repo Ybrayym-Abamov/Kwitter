@@ -1,7 +1,7 @@
 import React from "react";
 import { UserInfo, UserDescription, DeleteUserButton, UpdateProfile } from ".";
 import "./UserProfile.css";
-import { Card } from 'antd';
+import { Card, Divider } from 'antd';
 import 'antd/dist/antd.css';
 import { withAsyncAction } from "../HOCs";
 
@@ -28,7 +28,8 @@ const date = new Date(userData.createdAt).toDateString();
         <Card bordered={false}>
           <UserDescription user={userData}/>
           <UserDescription about={userData.about}/> 
-          <p>message counter code here  | {date}</p>
+          <Divider />
+          <p className="subdata">message counter code here  | Kwitting the Urth since {date}</p>
           <div className="accountbuttons">
             <UpdateProfile user={userData} visible={false}/>
             <DeleteUserButton />

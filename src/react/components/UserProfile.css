@@ -5,7 +5,7 @@
 }
 
 .ant-btn {
-    margin: 5px 5px 0 5px;
+    margin: 15px 5px 0 5px;
 }
 
 .ant-btn-primary {
@@ -16,4 +16,12 @@
     background-color: white;
     color: #ff4d4f;
     font-weight: 700;
+}
+
+.subdata {
+    /* margin-top: 15px; */
+    /* text-align: right; */
+    font-size: 9pt;
+    font-style: italic;
+    color: rgb(179, 179, 179);
 }
