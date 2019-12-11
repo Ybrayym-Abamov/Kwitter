@@ -110,20 +110,20 @@ export const updateUserThenReloadUser = userData => dispatch => {
 
 export const getUserPicture = (username) => (dispatch, getState) => {
   dispatch({ type: GETUSERPICTURE.START });
-  debugger;
+  // debugger;
   return fetch(`${url}/${username}/picture`, {
     method: "GET",
     headers: { ...jsonHeaders }
   })
     .then(result => {
-      debugger;
+      // debugger;
       return dispatch({
         type: GETUSERPICTURE.SUCCESS,
         payload: result
       });
     })
     .catch(err => {
-      debugger;
+      // debugger;
       return Promise.reject(dispatch({ type: GETUSERPICTURE.FAIL, payload: err }));
     });
 };
