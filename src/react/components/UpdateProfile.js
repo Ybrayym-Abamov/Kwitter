@@ -141,7 +141,7 @@ class UpdateProfile extends React.Component {
               />
             </Form.Item>
             <div>
-              <Avatar size={64} src={`https://kwitter-api.herokuapp.com/users/${this.props.user.username}/picture`} />
+              <Avatar size={64} src={`https://urth-kwitter.herokuapp.com/users/${this.props.user.username}/picture`} />
               <span>Edit Avatar (upload gif, jpeg, png & size below 200kb)</span>
               <div>
                 <Upload {...this.uploadProps} accept=".gif,.jpeg,.png" size="100">
