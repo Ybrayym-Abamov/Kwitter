@@ -1,5 +1,5 @@
 import { domain, jsonHeaders, handleJsonResponse } from "./constants";
-import { POSTUSER, DELETEUSER, UPDATEUSER, LOGOUT, GETUSER, GETUSERPICTURE, GETUSERS } from "../actionTypes";
+import { POSTUSER, DELETEUSER, UPDATEUSER, LOGOUT, GETUSER, GETUSERS } from "../actionTypes";
 import { login } from "./auth";
 
 const url = domain + "/users";
@@ -107,30 +107,6 @@ export const getUser = () => (dispatch, getState) => {
 export const updateUserThenReloadUser = userData => dispatch => {
   return dispatch(updateUser(userData)).then(() => dispatch(getUser()))
 }
-
-export const getUserPicture = (username) => (dispatch, getState) => {
-  dispatch({ type: GETUSERPICTURE.START });
-  // debugger;
-  return fetch(`${url}/${username}/picture`, {
-    method: "GET",
-    headers: { ...jsonHeaders }
-  })
-    .then(result => {
-      // debugger;
-      return dispatch({
-        type: GETUSERPICTURE.SUCCESS,
-        payload: result
-      });
-    })
-    .catch(err => {
-      // debugger;
-      return Promise.reject(dispatch({ type: GETUSERPICTURE.FAIL, payload: err }));
-    });
-};
-
-
-
-
 
 export const getUsers = () => (dispatch) => {
   dispatch({ type: GETUSERS.START });
