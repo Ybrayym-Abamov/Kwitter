@@ -13,24 +13,24 @@ class UserProfile extends React.Component {
   };
 
   componentDidMount() {
-    this.props.getUser();       
+    this.props.getUser();
   }
 
   render() {
     if (this.props.result === null) {
       return <div>Loading...</div>;
-  }
-  const userData = this.props.result.user;
-const date = new Date(userData.createdAt).toDateString();
+    }
+    const userData = this.props.result.user;
+    const date = new Date(userData.createdAt).toDateString();
     return (
       <>
-        <UserInfo user={userData}/>
+        <UserInfo user={userData} />
         <Card bordered={false}>
-          <UserDescription user={userData}/>
-          <UserDescription about={userData.about}/> 
-          <p>message counter code here  | {date}</p>
+          <UserDescription user={userData} />
+          <UserDescription about={userData.about} />
+          <p>message counter code here | {date}</p>
           <div className="accountbuttons">
-            <UpdateProfile user={userData} visible={false}/>
+            <UpdateProfile user={userData} visible={false} />
             <DeleteUserButton />
           </div>
         </Card>
@@ -39,4 +39,4 @@ const date = new Date(userData.createdAt).toDateString();
   }
 }
 
-export default withAsyncAction("users", "getUser") (UserProfile);
+export default withAsyncAction("users", "getUser")(UserProfile);

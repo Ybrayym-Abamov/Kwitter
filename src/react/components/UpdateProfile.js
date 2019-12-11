@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal, Button, Icon, Input, Form, Avatar,Upload,message } from "antd";
 import { connect } from "react-redux"
-import { updateUserThenReloadUser as updateUser,getUserPicture,getUser } from "../../redux/actionCreators/users";
+import { updateUserThenReloadUser as updateUser,getUser } from "../../redux/actionCreators/users";
 import "./UpdateProfile.css";
 import "antd/dist/antd.css";
 
@@ -141,7 +141,7 @@ class UpdateProfile extends React.Component {
               />
             </Form.Item>
             <div>
-              <Avatar size={64} src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />
+              <Avatar size={64} src={`https://kwitter-api.herokuapp.com/users/${this.props.user.username}/picture`} />
               <span>Edit Avatar (upload gif, jpeg, png & size below 200kb)</span>
               <div>
                 <Upload {...this.uploadProps} accept=".gif,.jpeg,.png" size="100">
@@ -164,4 +164,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, { updateUser,getUserPicture,getUser })(UpdateProfile);
+export default connect(mapStateToProps, { updateUser,getUser })(UpdateProfile);

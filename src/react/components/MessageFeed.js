@@ -3,15 +3,19 @@ import { Message } from ".";
 // import "./MessageFeed.css";
 
 class MessageFeed extends React.Component {
-      // componentDidMount {
-      //       this.messagePollingID = setInterval()
+      // componentDidMount() {
+      //       this.props.getUserMessages(this.props.currentUser)
+      //       // this.messagePollingID = setInterval()
       // }
-    render() {
-        return (
-        <>
-              <Message />
-        </>
-        );
+
+      
+
+      render() {
+            return (
+                  <>
+                        <Message currentUser={JSON.parse(localStorage.login).result.username}/>
+                  </>
+            );
       }
 }
 export default MessageFeed;

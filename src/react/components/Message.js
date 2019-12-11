@@ -39,10 +39,10 @@ class Message extends Component {
                 <div className='Message'>
                     <div>
                         {getMessages.map(item => (
-                            <Card bordered={false} key={item.id} className="userpost">
+                            <Card bordered={false} key={item.id} className="userpost" >
                                 <div className="postinfo">
                                     <Meta key={item.id}
-                                        avatar={<Avatar size={64} src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />} //we'll need to make this link to whatever icon the user uploads
+                                        avatar={<Avatar size={64} src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
                                         title={item.username}
                                         description={item.text}
                                     />
