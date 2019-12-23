@@ -19,7 +19,7 @@ class Profile extends React.Component {
           </div>
           <div className="fulldiv" />
           <div className="content">
-            <MessageFeed />
+            <MessageFeed  />
           </div>
           <BackToTop />
         </div>

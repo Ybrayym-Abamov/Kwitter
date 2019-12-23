@@ -4,16 +4,16 @@ import { Message } from ".";
 
 class MessageFeed extends React.Component {
       // componentDidMount() {
-      //       this.props.getUserMessages(this.props.currentUser)
+      //       this.props.getUserMessages(this.props.username)
       //       // this.messagePollingID = setInterval()
       // }
 
-      
+
 
       render() {
             return (
                   <>
-                        <Message currentUser={JSON.parse(localStorage.login).result.username}/>
+                        <Message />
                   </>
             );
       }

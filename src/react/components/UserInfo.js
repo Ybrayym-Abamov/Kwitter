@@ -24,7 +24,7 @@ class UserInfo extends React.Component {
         return <div>Loading...</div>;
     }
     const userData = this.props.result.user;
-    const image =`https://kwitter-api.herokuapp.com/users/${userData.username}/picture`;
+    const image =`https://urth-kwitter.herokuapp.com/users/${userData.username}/picture`;
 
       return (
         <Card bordered={false}>

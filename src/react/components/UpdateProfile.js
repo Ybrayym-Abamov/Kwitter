@@ -2,7 +2,7 @@ import React from "react";
 import { Modal, Button, Icon, Input, Form, Avatar,Upload,message } from "antd";
 import { connect } from "react-redux"
 import { updateUserThenReloadUser as updateUser,getUser } from "../../redux/actionCreators/users";
-import "./UpdateProfile.css";
+// import "./UpdateProfile.css";
 import "antd/dist/antd.css";
 
 const { TextArea } = Input;
@@ -32,7 +32,7 @@ class UpdateProfile extends React.Component {
       "Content-Type": "application/json",
       Accept: "application/json"
     };
-  return fetch("https://kwitter-api.herokuapp.com/users/" +  username, {
+  return fetch("https://urth-kwitter.herokuapp.com/users/" +  username, {
     method: "PATCH",
     headers: { Authorization: "Bearer " + token, ...jsonHeaders},
     body: JSON.stringify({ password: this.state.password, displayName: this.state.displayName, about: this.state.about })
@@ -65,7 +65,7 @@ class UpdateProfile extends React.Component {
 
    uploadProps = {
     name: 'picture',
-    action: `https://kwitter-api.herokuapp.com/users/${this.props.user.username}/picture`,
+    action: `https://urth-kwitter.herokuapp.com/users/${this.props.user.username}/picture`,
     method:'put', 
     headers: {
       "Authorization": "Bearer " + JSON.parse(localStorage.login).result.token,
@@ -141,7 +141,7 @@ class UpdateProfile extends React.Component {
               />
             </Form.Item>
             <div>
-              <Avatar size={64} src={`https://kwitter-api.herokuapp.com/users/${this.props.user.username}/picture`} />
+              <Avatar size={64} src={`https://urth-kwitter.herokuapp.com/users/${this.props.user.username}/picture`} />
               <span>Edit Avatar (upload gif, jpeg, png & size below 200kb)</span>
               <div>
                 <Upload {...this.uploadProps} accept=".gif,.jpeg,.png" size="100">

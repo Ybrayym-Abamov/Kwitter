@@ -22,3 +22,31 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#files
+BackToTop.css
+ BackToTop.js
+ CreateNewMessage.css	
+ CreateNewMessage.js	
+ DeleteUserButton.js	
+ LogOut.js	
+ LoginForm.css	
+ LoginForm.js	
+ Message.css	
+ Message.js		
+ RegisterForm.css		
+ RegisterForm.js	
+ Sidebar.css	
+ Sidebar.js	 
+ TopMenu.css		
+ TopMenu.js	 
+ UpdateProfile.css	
+ UpdateProfile.js	 
+ UserDescription.js	
+ UserInfo.css	 
+ UserInfo.js	 
+ UserInfoBlock.js	
+ UserList.css		
+ UserProfile.css	
+ UserProfile.js	
+ index.js

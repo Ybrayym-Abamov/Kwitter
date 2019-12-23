@@ -4,11 +4,22 @@
     background-color: white;
     padding: 3%;
     margin: auto;
-    margin-top: 3%;
+    /* margin-top: 3%; */
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 425px;
+}
+
+.ant-row {
+    margin: 0;
+}
+
+.centerform {
+    display: flex;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
 }
 
 body {
@@ -47,7 +58,9 @@ h2 {
 h3 {
     font-size: 18px;
 }
-
+.kweetbtn {
+    margin: 0 0 10px 0;
+}
 .content {
     /* border: 1px solid blue; */
     padding: 10px;
@@ -82,7 +95,7 @@ h3 {
     border: 1px solid lightgray;
     box-shadow: 0 20px 30px -15px rgba(0, 0, 0, .1);
     border-radius: 15px;
-    width: 565px;
+    width: 564px;
     margin: 0;
     display: flex;
     flex-direction: column;

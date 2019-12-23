@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Avatar } from 'antd';
+import { Card, Avatar, Divider } from 'antd';
 import 'antd/dist/antd.css';
 import "./Message.css";
 import moment from 'moment';
@@ -47,6 +47,7 @@ class Message extends Component {
                                         description={item.text}
                                     />
                                     <div className="timestamp">{moment(item.createdAt).startOf('minutes').fromNow()}</div>
+                                <Divider />
                                 </div>
                             </Card>
                         ))}

@@ -6,16 +6,15 @@ import "./Style.css";
 class Home extends React.Component {
   render() {
     return (
-      <>
+      <div className="centerform">
         <div className="form">
-          <h2>Your favorite microblogging</h2>
-          <p>platform</p>
+          <h1>Your favorite microblogging platform</h1>
           <LoginForm />
           <h4>
             Don't have an account? <Link to="/register">Register Here</Link>
           </h4>
         </div>
-      </>
+      </div>
     );
   }
 }

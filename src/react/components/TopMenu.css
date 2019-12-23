@@ -1,16 +1,12 @@
 .topmenu {
   display: flex;
-  justify-content: flex-end;
-  /* padding: 0 1em; */
-  margin: -1px 0;
+  justify-content: center;
+  margin: -1px ;
   border: 1px solid lightgray;
   border-radius: 15px 15px 0 0;
   box-shadow: 0 10px 20px -15px rgba(0,0,0,.1);
 }
-/* .topmenu {
-  display: flex;
-  justify-content: center;
-} */
+
 .ant-menu-item {
   display: flex;
   flex-grow: 1;
